@@ -8,7 +8,8 @@ schema: 2.0.0
 # SafeGetCommand
 
 ## SYNOPSIS
-This command is used by Pester's Mocking framework. 
+This command is used by Pester's Mocking framework.
+
 You do not need to call it directly.
 
 ## SYNTAX

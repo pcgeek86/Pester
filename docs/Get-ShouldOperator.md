@@ -74,7 +74,4 @@ standard PowerShell discovery patterns (like \`Get-Help Should -Parameter *\`).
 
 ## RELATED LINKS
 
-[https://github.com/Pester/Pester
-about_Should](https://github.com/Pester/Pester
-about_Should)
-
+[about_Should](about_Should.md)

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Setup
 
 ## SYNOPSIS
-This command is included in the Pester Mocking framework for backwards compatibility. 
+This command is included in the Pester Mocking framework for backwards compatibility.
 You do not need to call it directly.
 
 ## SYNTAX

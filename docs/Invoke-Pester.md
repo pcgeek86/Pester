@@ -632,11 +632,10 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[https://github.com/pester/Pester/wiki/Invoke-Pester
-Describe
-about_Pester
-New-PesterOption](https://github.com/pester/Pester/wiki/Invoke-Pester
-Describe
-about_Pester
-New-PesterOption)
+[https://github.com/pester/Pester/wiki/Invoke-Pester](https://github.com/pester/Pester/wiki/Invoke-Pester)
 
+[Describe](Describe.md)
+
+[about_Pester](about_Pester.md)
+
+[New-PesterOption](New-PesterOption.md)

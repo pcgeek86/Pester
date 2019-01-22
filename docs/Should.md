@@ -719,6 +719,6 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[about_Should
-about_Pester]()
+[about_Should](about_Should.md)
 
+[about_Pester](about_Pester.md)

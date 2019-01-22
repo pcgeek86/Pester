@@ -124,7 +124,8 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[about_gherkin
-Invoke-GherkinStep
-https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd]()
+[about_gherkin]()
 
+[Invoke-GherkinStep](Invoke-GherkinStep)
+
+[https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd](https://sites.google.com/site/unclebobconsultingllc/the-truth-about-bdd)

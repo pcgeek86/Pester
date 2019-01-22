@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-DynamicParameterVariable
 
 ## SYNOPSIS
-This command is used by Pester's Mocking framework. 
+This command is used by Pester's Mocking framework.
 You do not need to call it directly.
 
 ## SYNTAX

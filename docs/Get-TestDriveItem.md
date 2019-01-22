@@ -66,7 +66,6 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[https://github.com/pester/Pester/wiki/TestDrive
-about_TestDrive](https://github.com/pester/Pester/wiki/TestDrive
-about_TestDrive)
+[https://github.com/pester/Pester/wiki/TestDrive](https://github.com/pester/Pester/wiki/TestDrive)
 
+[about_TestDrive](about_TestDrive.md)

@@ -20,7 +20,7 @@ AfterEach [-Scriptblock] <ScriptBlock> [<CommonParameters>]
 ## DESCRIPTION
 BeforeEach, AfterEach, BeforeAll, and AfterAll are unique in that they apply
 to the entire Context or Describe block, regardless of the order of the
-statements in the Context or Describe. 
+statements in the Context or Describe.
 For a full description of this
 behavior, as well as how multiple BeforeEach or AfterEach blocks interact
 with each other, please refer to the about_BeforeEach_AfterEach help file.
@@ -63,5 +63,4 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[about_BeforeEach_AfterEach]()
-
+[about_BeforeEach_AfterEach](docs/about_BeforeEach_AfterEach.md)

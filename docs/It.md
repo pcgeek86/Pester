@@ -137,10 +137,10 @@ Accept wildcard characters: False
 ```
 
 ### -TestCases
-Optional array of hashtable (or any IDictionary) objects. 
+Optional array of hashtable (or any IDictionary) objects.
 If this parameter is used,
 Pester will call the test script block once for each table in the TestCases array,
-splatting the dictionary to the test script block as input. 
+splatting the dictionary to the test script block as input.
 If you want the name of
 the test to appear differently for each test case, you can embed tokens into the Name
 parameter with the syntax 'Adds numbers \<A\> and \<B\>' (assuming you have keys named A and B
@@ -208,8 +208,12 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[Describe
-Context
-Set-TestInconclusive
-about_should]()
+[Describe](Describe.md)
 
+[Context](Context.md)
+
+[Set-TestInconclusive](Set-TestInconclusive.md)
+
+[about_Should](about_Should.md)
+
+[Get-ShouldOperator](Get-ShouldOperator.md)

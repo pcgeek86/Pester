@@ -21,7 +21,7 @@ Creates a logical group of tests.
 All Mocks and TestDrive contents
 
 defined within a Describe block are scoped to that Describe; they
-will no longer be present when the Describe block exits. 
+will no longer be present when the Describe block exits.
 A Describe
 block may contain any number of Context and It blocks.
 
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Optional parameter containing an array of strings. 
+Optional parameter containing an array of strings.
 When calling Invoke-Pester,
 it is possible to specify a -Tag parameter which will only execute Describe blocks
 containing the same Tag.
@@ -127,10 +127,14 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[It
-Context
-Invoke-Pester
-about_Should
-about_Mocking
-about_TestDrive]()
+[It](It.md)
 
+[Context](Context.md)
+
+[Invoke-Pester](Invoke-Pester.md)
+
+[about_Should](about_Should.md)
+
+[about_Mocking](about_Mocking.md)
+
+[about_TestDrive](about_TestDrive.md)

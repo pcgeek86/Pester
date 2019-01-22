@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Optional parameter containing an array of strings. 
+Optional parameter containing an array of strings.
 When calling Invoke-Pester,
 it is possible to specify a -Tag parameter which will only execute Context blocks
 containing the same Tag.
@@ -116,11 +116,16 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[Describe
-It
-BeforeEach
-AfterEach
-about_Should
-about_Mocking
-about_TestDrive]()
+[Describe](Describe.md)
 
+[It](It.md)
+
+[AfterEach](AfterEach.md)
+
+[BeforeEach](BeforeEach.md)
+
+[about_Should](about_Should.md)
+
+[about_Mocking](about_Mocking.md)
+
+[about_TestDrive](about_TestDrive.md)

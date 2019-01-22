@@ -81,4 +81,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [https://github.com/pester/Pester/wiki/Set%E2%80%90TestInconclusive](https://github.com/pester/Pester/wiki/Set%E2%80%90TestInconclusive)
-

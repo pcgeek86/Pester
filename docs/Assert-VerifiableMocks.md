@@ -45,7 +45,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4
-https://github.com/pester/Pester/issues/880](https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4
-https://github.com/pester/Pester/issues/880)
+[https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4](https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4)
 
+[https://github.com/pester/Pester/issues/880][https://github.com/pester/Pester/issues/880)

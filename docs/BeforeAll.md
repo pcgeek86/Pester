@@ -60,5 +60,4 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[about_BeforeEach_AfterEach]()
-
+[about_BeforeEach_AfterEach](about_BeforeEach_AfterEach.md)

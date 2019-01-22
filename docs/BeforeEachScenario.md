@@ -84,7 +84,8 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[AfterEachFeature
-BeforeEachScenario
-AfterEachScenario]()
+[AfterEachFeature](AfterEachFeature.md)
 
+[AfterEachScenario](AfterEachScenario.md)
+
+[BeforeEachScenario](BeforeEachScenario.md)

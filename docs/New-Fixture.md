@@ -111,9 +111,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Describe
-Context
-It
-about_Pester
-about_Should]()
+[Describe](Describe.md)
 
+[Context](Context.md)
+
+[It](It.md)
+
+[about_Pester](about_Pester.md)
+
+[about_Should](about_Should.md)

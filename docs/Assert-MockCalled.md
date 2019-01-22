@@ -27,7 +27,7 @@ Assert-MockCalled [-CommandName] <String> [[-Times] <Int32>] -ExclusiveFilter <S
 
 ## DESCRIPTION
 This command verifies that a mocked command has been called a certain number
-of times. 
+of times.
 If the call history of the mocked command does not match the parameters
 passed to Assert-MockCalled, Assert-MockCalled will throw an exception.
 
@@ -113,7 +113,7 @@ Some Code ...}
     }
 }
 
-Checks for calls to the mock within the SomeModule module. 
+Checks for calls to the mock within the SomeModule module.
 Note that both the Mock
 and Assert-MockCalled commands use the same module name.
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 ### -ExclusiveFilter
 Like ParameterFilter, except when you use ExclusiveFilter, and there
 were any calls to the mocked command which do not match the filter,
-an exception will be thrown. 
+an exception will be thrown.
 This is a convenient way to avoid needing
 to have two calls to Assert-MockCalled like this:
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleName
-The module where the mock being checked was injected. 
+The module where the mock being checked was injected.
 This is optional,
 and must match the ModuleName that was used when setting up the Mock.
 
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 
 ### -Scope
 An optional parameter specifying the Pester scope in which to check for
-calls to the mocked command. 
+calls to the mocked command.
 By default, Assert-MockCalled will find
 all calls to the mocked command in the current Context block (if present),
 or the current Describe block (if there is no active Context.)  Valid
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 If this switch is present, the number specified in Times must match
 exactly the number of times the mock has been called.
 Otherwise it
-must match "at least" the number of times specified. 
+must match "at least" the number of times specified.
 If the value
 passed to the Times parameter is zero, the Exactly switch is implied.
 
@@ -268,9 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 The parameter filter passed to Assert-MockCalled does not necessarily have to match the parameter filter
-(if any) which was used to create the Mock. 
+(if any) which was used to create the Mock.
 Assert-MockCalled will find any entry in the command history
-which matches its parameter filter, regardless of how the Mock was created. 
+which matches its parameter filter, regardless of how the Mock was created.
 However, if any calls to the
 mocked command are made which did not match any mock's parameter filter (resulting in the original command
 being executed instead of a mock), these calls to the original command are not tracked in the call history.

@@ -68,7 +68,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+(https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4)## INPUTS
 
 ## OUTPUTS
 

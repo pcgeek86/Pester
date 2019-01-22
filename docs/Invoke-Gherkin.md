@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -CodeCoverage
-Instructs Pester to generate a code coverage report in addition to running tests. 
+Instructs Pester to generate a code coverage report in addition to running tests.
 You may pass either hashtables or strings to this parameter.
 
 If strings are used, they must be paths (wildcards allowed) to source files, and all commands in the files are analyzed for code coverage.
@@ -356,7 +356,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Invoke-Pester
-https://kevinmarquette.github.io/2017-03-17-Powershell-Gherkin-specification-validation/
-https://kevinmarquette.github.io/2017-04-30-Powershell-Gherkin-advanced-features/]()
+[Invoke-Pester](Invoke-Pester.md)
 
+[https://kevinmarquette.github.io/2017-03-17-Powershell-Gherkin-specification-validation/](https://kevinmarquette.github.io/2017-03-17-Powershell-Gherkin-specification-validation/)
+
+[https://kevinmarquette.github.io/2017-04-30-Powershell-Gherkin-advanced-features/](https://kevinmarquette.github.io/2017-04-30-Powershell-Gherkin-advanced-features/)

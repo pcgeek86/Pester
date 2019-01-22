@@ -53,7 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -TestSuiteName
-When generating NUnit XML output, this controls the name assigned to the root "test-suite" element. 
+When generating NUnit XML output, this controls the name assigned to the root "test-suite" element.
 Defaults to "Pester".
 
 ```yaml
@@ -114,5 +114,4 @@ You cannot pipe input to this command.
 
 ## RELATED LINKS
 
-[Invoke-Pester]()
-
+[Invoke-Pester](Invoke-Pester.md)

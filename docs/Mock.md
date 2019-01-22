@@ -246,7 +246,7 @@ Accept wildcard characters: False
 
 ### -ModuleName
 Optional string specifying the name of the module where this command
-is to be mocked. 
+is to be mocked.
 This should be a module that _calls_ the mocked
 command; it doesn't necessarily have to be the same module which
 originally implemented the command.
@@ -275,11 +275,16 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 
 ## RELATED LINKS
 
-[Assert-MockCalled
-Assert-VerifiableMock
-Describe
-Context
-It
-about_Should
-about_Mocking]()
+[Assert-MockCalled](Assert-MockCalled.md)
 
+[Assert-VerifiableMock](Assert-VerifiableMock.md)
+
+[Describe](Describe.md)
+
+[Context](Context.md)
+
+[It](It.md)
+
+[about_Should](about_Should.md)
+
+[about_Mocking](about_Mocking.md)
