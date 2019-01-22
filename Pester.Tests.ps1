@@ -153,6 +153,7 @@ Describe 'Style rules' -Tag StyleRules {
         Get-ChildItem (Join-Path $pesterRoot 'en-US') -Include *.ps1, *.psm1, *.psd1, *.txt -Recurse
         Get-ChildItem (Join-Path $pesterRoot 'Functions') -Include *.ps1, *.psm1, *.psd1 -Recurse
         Get-ChildItem (Join-Path $pesterRoot 'Dependencies') -Include *.ps1, *.psm1, *.psd1 -Recurse
+        Get-ChildItem (Join-Path $pesterRoot 'docs') -Include *.md -Recurse
     )
 
     It 'Pester source files contain no trailing whitespace' {
@@ -347,8 +348,8 @@ Describe 'Assertion operators' {
         Add-AssertionOperator -Name SameNameAndScript -Test $function:SameNameAndScript
 
         { Add-AssertionOperator -Name SameNameAndScript -Test {
-            $true
-        } } | Should -Not -Throw
+                $true
+            } } | Should -Not -Throw
     }
     It 'Allows an operator with an identical name, test, and alias to be re-registered' {
         function SameNameAndScriptAndAlias {
@@ -357,8 +358,8 @@ Describe 'Assertion operators' {
         Add-AssertionOperator -Name SameNameAndScriptAndAlias -Test $function:SameNameAndScriptAndAlias -Alias SameAlias
 
         { Add-AssertionOperator -Name SameNameAndScriptAndAlias -Test {
-            $true
-        } -Alias SameAlias } | Should -Not -Throw
+                $true
+            } -Alias SameAlias } | Should -Not -Throw
     }
     It 'Allows an operator to be registered with multiple aliases' {
         function MultipleAlias {
