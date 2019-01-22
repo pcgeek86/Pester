@@ -11,11 +11,13 @@ schema: 2.0.0
 # Invoke-Pester
 
 ## SYNOPSIS
+
 Runs Pester tests
 
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Invoke-Pester [[-Script] <Object[]>] [[-TestName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-PassThru] [-CodeCoverage <Object[]>] [-CodeCoverageOutputFile <String>]
@@ -24,6 +26,7 @@ Invoke-Pester [[-Script] <Object[]>] [[-TestName] <String[]>] [-EnableExit] [[-T
 ```
 
 ### NewOutputSet
+
 ```
 Invoke-Pester [[-Script] <Object[]>] [[-TestName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-PassThru] [-CodeCoverage <Object[]>] [-CodeCoverageOutputFile <String>]
@@ -32,7 +35,8 @@ Invoke-Pester [[-Script] <Object[]>] [[-TestName] <String[]>] [-EnableExit] [[-T
 ```
 
 ## DESCRIPTION
-The Invoke-Pester function runs Pester tests, including *.Tests.ps1 files and
+
+The Invoke-Pester function runs Pester tests, including \*.Tests.ps1 files and
 Pester tests in PowerShell scripts.
 
 You can run scripts that include Pester tests just as you would any other
@@ -42,7 +46,7 @@ Typically, you use Invoke-Pester to run
 all Pester tests in a directory, or to use its many helpful parameters,
 including parameters that generate custom objects or XML files.
 
-By default, Invoke-Pester runs all *.Tests.ps1 files in the current directory
+By default, Invoke-Pester runs all \*.Tests.ps1 files in the current directory
 and all subdirectories recursively.
 You can use its parameters to select tests
 by file name, test name, or tag.
@@ -74,41 +78,46 @@ repository, see https://github.com/Pester.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Invoke-Pester
 ```
 
-This command runs all *.Tests.ps1 files in the current directory and its subdirectories.
+This command runs all \*.Tests.ps1 files in the current directory and its subdirectories.
 
 ### EXAMPLE 2
+
 ```
 Invoke-Pester -Script .\Util*
 ```
 
-This commands runs all *.Tests.ps1 files in subdirectories with names that begin
+This commands runs all \*.Tests.ps1 files in subdirectories with names that begin
 with 'Util' and their subdirectories.
 
 ### EXAMPLE 3
+
 ```
 Invoke-Pester -Script D:\MyModule, @{ Path = '.\Tests\Utility\ModuleUnit.Tests.ps1'; Parameters = @{ Name = 'User01' }; Arguments = srvNano16  }
 ```
 
-This command runs all *.Tests.ps1 files in D:\MyModule and its subdirectories.
+This command runs all \*.Tests.ps1 files in D:\MyModule and its subdirectories.
 It also runs the tests in the ModuleUnit.Tests.ps1 file using the following
 parameters: .\Tests\Utility\ModuleUnit.Tests.ps1 srvNano16 -Name User01
 
 ### EXAMPLE 4
+
 ```
 Invoke-Pester -Script @{Script = $scriptText}
 ```
 
-This command runs all tests passed as string in $scriptText variable with no aditional parameters and arguments.
+This command runs all tests passed as string in \$scriptText variable with no aditional parameters and arguments.
 This notation can be combined with
-Invoke-Pester -Script D:\MyModule, @{ Path = '.\Tests\Utility\ModuleUnit.Tests.ps1'; Parameters = @{ Name = 'User01' }; Arguments = srvNano16  }
+Invoke-Pester -Script D:\MyModule, @{ Path = '.\Tests\Utility\ModuleUnit.Tests.ps1'; Parameters = @{ Name = 'User01' }; Arguments = srvNano16 }
 if needed.
 This command can be used when tests and scripts are stored not on the FileSystem, but somewhere else, and it is impossible to provide a path to it.
 
 ### EXAMPLE 5
+
 ```
 Invoke-Pester -TestName "Add Numbers"
 ```
@@ -116,13 +125,14 @@ Invoke-Pester -TestName "Add Numbers"
 This command runs only the tests in the Describe block named "Add Numbers".
 
 ### EXAMPLE 6
+
 ```
 $results = Invoke-Pester -Script D:\MyModule -PassThru -Show None
 ```
 
 $failed = $results.TestResult | where Result -eq 'Failed'
 
-$failed.Name
+\$failed.Name
 cannot find help for parameter: Force : in Compress-Archive
 help for Force parameter in Compress-Archive has wrong Mandatory value
 help for Compress-Archive has wrong parameter type for Force
@@ -139,9 +149,9 @@ Time                   : 00:00:00.0193083
 FailureMessage         : Expected: value to not be empty
 StackTrace             : at line: 279 in C:\GitHub\PesterTdd\Module.Help.Tests.ps1
                          279:                     $parameterHelp.Description.Text | Should Not BeNullOrEmpty
-ErrorRecord            : Expected: value to not be empty
+ErrorRecord : Expected: value to not be empty
 ParameterizedSuiteName :
-Parameters             : {}
+Parameters : {}
 
 This examples uses the PassThru parameter to return a custom object with the
 Pester test results.
@@ -150,9 +160,9 @@ to the output stream.
 It also uses the Show parameter set to None to suppress the host output.
 
 The first command runs Invoke-Pester with the PassThru and Show parameters and
-saves the PassThru output in the $results variable.
+saves the PassThru output in the \$results variable.
 
-The second command gets only failing results and saves them in the $failed variable.
+The second command gets only failing results and saves them in the \$failed variable.
 
 The third command gets the names of the failing results.
 The result name is the
@@ -164,6 +174,7 @@ property values describe the test, the expected result, the actual result, and
 useful values, including a stack trace.
 
 ### EXAMPLE 7
+
 ```
 Invoke-Pester -EnableExit -OutputFile ".\artifacts\TestResults.xml" -OutputFormat NUnitXml
 ```
@@ -175,44 +186,49 @@ The
 test returns an exit code equal to the number of test failures.
 
 ### EXAMPLE 8
+
 ```
 Invoke-Pester -CodeCoverage 'ScriptUnderTest.ps1'
 ```
 
-Runs all *.Tests.ps1 scripts in the current directory, and generates a coverage
+Runs all \*.Tests.ps1 scripts in the current directory, and generates a coverage
 report for all commands in the "ScriptUnderTest.ps1" file.
 
 ### EXAMPLE 9
+
 ```
 Invoke-Pester -CodeCoverage @{ Path = 'ScriptUnderTest.ps1'; Function = 'FunctionUnderTest' }
 ```
 
-Runs all *.Tests.ps1 scripts in the current directory, and generates a coverage
+Runs all \*.Tests.ps1 scripts in the current directory, and generates a coverage
 report for all commands in the "FunctionUnderTest" function in the "ScriptUnderTest.ps1" file.
 
 ### EXAMPLE 10
+
 ```
 Invoke-Pester -CodeCoverage 'ScriptUnderTest.ps1' -CodeCoverageOutputFile '.\artifacts\TestOutput.xml'
 ```
 
-Runs all *.Tests.ps1 scripts in the current directory, and generates a coverage
+Runs all \*.Tests.ps1 scripts in the current directory, and generates a coverage
 report for all commands in the "ScriptUnderTest.ps1" file, and writes the coverage report to TestOutput.xml
 file using the JaCoCo XML Report DTD.
 
 ### EXAMPLE 11
+
 ```
 Invoke-Pester -CodeCoverage @{ Path = 'ScriptUnderTest.ps1'; StartLine = 10; EndLine = 20 }
 ```
 
-Runs all *.Tests.ps1 scripts in the current directory, and generates a coverage
+Runs all \*.Tests.ps1 scripts in the current directory, and generates a coverage
 report for all commands on lines 10 through 20 in the "ScriptUnderTest.ps1" file.
 
 ### EXAMPLE 12
+
 ```
 Invoke-Pester -Script C:\Tests -Tag UnitTest, Newest -ExcludeTag Bug
 ```
 
-This command runs *.Tests.ps1 files in C:\Tests and its subdirectories.
+This command runs \*.Tests.ps1 files in C:\Tests and its subdirectories.
 In those
 files, it runs only tests that have UnitTest or Newest tags, unless the test
 also has a Bug tag.
@@ -220,6 +236,7 @@ also has a Bug tag.
 ## PARAMETERS
 
 ### -Script
+
 Specifies the test files that Pester runs.
 You can also use the Script parameter
 to pass parameter names and values to a script that contains Pester tests.
@@ -230,13 +247,13 @@ Wildcard characters are supported.
 
 The Script parameter is optional.
 If you omit it, Invoke-Pester runs all
-*.Tests.ps1 files in the local directory and its subdirectories recursively.
+\*.Tests.ps1 files in the local directory and its subdirectories recursively.
 
 To run tests in other files, such as .ps1 files, enter the path and file name of
 the file.
 (The file name is required.
-Name patterns that end in "*.ps1" run only
-*.Tests.ps1 files.)
+Name patterns that end in "_.ps1" run only
+_.Tests.ps1 files.)
 
 To run a Pester test with parameter names and/or values, use a hash table as the
 value of the script parameter.
@@ -244,20 +261,20 @@ The keys in the hash table are:
 
 -- Path \[string\] (required): Specifies a test to run.
 The value is a path\file
-   name or name pattern.
+name or name pattern.
 Wildcards are permitted.
 All hash tables in a Script
-   parameter value must have a Path key.
+parameter value must have a Path key.
 
 -- Parameters \[hashtable\]: Runs the script with the specified parameters.
 The
-   value is a nested hash table with parameter name and value pairs, such as
-   @{UserName = 'User01'; Id = '28'}.
+value is a nested hash table with parameter name and value pairs, such as
+@{UserName = 'User01'; Id = '28'}.
 
 -- Arguments \[array\]: An array or comma-separated list of parameter values
-   without names, such as 'User01', 28.
+without names, such as 'User01', 28.
 Use this key to pass values to positional
-   parameters.
+parameters.
 
 ```yaml
 Type: Object[]
@@ -272,6 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -TestName
+
 Runs only tests in Describe blocks that have the specified name or name pattern.
 Wildcard characters are supported.
 
@@ -291,6 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableExit
+
 Will cause Invoke-Pester to exit with a exit code equal to the number of failed
 tests once all tests have been run.
 Use this to "fail" a build when any tests fail.
@@ -308,10 +327,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Runs only tests in Describe blocks with the specified Tag parameter values.
 Wildcard characters are supported.
 Tag values that include spaces or whitespace
- will be split into multiple tags on the whitespace.
+will be split into multiple tags on the whitespace.
 
 When you specify multiple Tag values, Invoke-Pester runs tests that have any
 of the listed tags (it ORs the tags).
@@ -334,11 +354,12 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeTag
+
 Omits tests in Describe blocks with the specified Tag parameter values.
 Wildcard
 characters are supported.
 Tag values that include spaces or whitespace
- will be split into multiple tags on the whitespace.
+will be split into multiple tags on the whitespace.
 
 When you specify multiple ExcludeTag values, Invoke-Pester omits tests that have
 any of the listed tags (it ORs the tags).
@@ -361,6 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns a custom object (PSCustomObject) that contains the test results.
 
 By default, Invoke-Pester writes to the host program, not to the output stream (stdout).
@@ -382,6 +404,7 @@ Accept wildcard characters: False
 ```
 
 ### -CodeCoverage
+
 Adds a code coverage report to the Pester tests.
 Takes strings or hash table values.
 
@@ -410,35 +433,35 @@ When you
 provide a test file directly using string, code coverage will be measured.
 To include
 tests in code coverage of a directory, use the dictionary syntax and provide
-IncludeTests = $true option, as shown below.
+IncludeTests = \$true option, as shown below.
 
 To run a code coverage test only on selected classes, functions or lines in a script,
 enter a hash table value with the following keys:
 
 -- Path (P)(mandatory) \<string\>: Enter one path to the files.
 Wildcard characters
-   are supported, but only one string is permitted.
--- IncludeTests \<bool\>: Includes code coverage for Pester test files (*.tests.ps1).
-   Default is false.
+are supported, but only one string is permitted.
+-- IncludeTests \<bool\>: Includes code coverage for Pester test files (\*.tests.ps1).
+Default is false.
 
 One of the following: Class/Function or StartLine/EndLine
 
 -- Class (C) \<string\>: Enter the class name.
 Wildcard characters are
-   supported, but only one string is permitted.
-Default is *.
+supported, but only one string is permitted.
+Default is _.
 -- Function (F) \<string\>: Enter the function name.
 Wildcard characters are
-   supported, but only one string is permitted.
-Default is *.
+supported, but only one string is permitted.
+Default is _.
 
 -or-
 
 -- StartLine (S): Performs code coverage analysis beginning with the specified
-   line.
+line.
 Default is line 1.
 -- EndLine (E): Performs code coverage analysis ending with the specified line.
-   Default is the last line of the script.
+Default is the last line of the script.
 
 ```yaml
 Type: Object[]
@@ -453,6 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### -CodeCoverageOutputFile
+
 The path where Invoke-Pester will save formatted code coverage results file.
 
 The path must include the location and name of the folder and file name with
@@ -473,11 +497,13 @@ Accept wildcard characters: False
 ```
 
 ### -CodeCoverageOutputFileFormat
+
 The name of a code coverage report file format.
 
 Default value is: JaCoCo.
 
 Currently supported formats are:
+
 - JaCoCo - this XML file format is compatible with the VSTS/TFS
 
 ```yaml
@@ -493,6 +519,7 @@ Accept wildcard characters: False
 ```
 
 ### -Strict
+
 Makes Pending and Skipped tests to Failed tests.
 Useful for continuous
 integration where you need to make sure all tests passed.
@@ -510,6 +537,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFile
+
 The path where Invoke-Pester will save formatted test results log file.
 
 The path must include the location and name of the folder and file name with
@@ -530,6 +558,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFormat
+
 The format of output.
 Two formats of output are supported: NUnitXML and
 LegacyNUnitXML.
@@ -547,6 +576,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 The parameter Quiet is deprecated since Pester v.
 4.0 and will be deleted
 in the next major version of Pester.
@@ -572,6 +602,7 @@ Accept wildcard characters: False
 ```
 
 ### -PesterOption
+
 Sets advanced options for the test execution.
 Enter a PesterOption object,
 such as one that you create by using the New-PesterOption cmdlet, or a hash table
@@ -591,6 +622,7 @@ Accept wildcard characters: False
 ```
 
 ### -Show
+
 Customizes the output Pester writes to the screen.
 Available options are None, Default,
 Passed, Failed, Pending, Skipped, Inconclusive, Describe, Context, Summary, Header, All, Fails.
@@ -621,6 +653,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

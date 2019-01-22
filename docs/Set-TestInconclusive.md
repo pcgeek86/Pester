@@ -8,6 +8,7 @@ schema: 2.0.0
 # Set-TestInconclusive
 
 ## SYNOPSIS
+
 Set-TestInclusive used inside the It block will cause that the test will be
 considered as inconclusive.
 
@@ -18,6 +19,7 @@ Set-TestInconclusive [[-Message] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 If an Set-TestInconclusive is used inside It block, the test will always fails
 with an Inconclusive result.
 It's not a passed result, nor a failed result,
@@ -28,6 +30,7 @@ of the test could not be verified.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Invoke-Pester
 ```
@@ -46,15 +49,16 @@ The test result.
 
 Describing Example
 \[?\] Test what is inconclusive 96ms
-  I'm inconclusive because I can
-  at line: 10 in C:\Users\\\<SOME_FOLDER\>\Example.Tests.ps1
-  10:         Set-TestInconclusive -Message "I'm inconclusive because I can"
+I'm inconclusive because I can
+at line: 10 in C:\Users\\\<SOME_FOLDER\>\Example.Tests.ps1
+10: Set-TestInconclusive -Message "I'm inconclusive because I can"
 Tests completed in 408ms
 Tests Passed: 0, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 1
 
 ## PARAMETERS
 
 ### -Message
+
 Value assigned to the Message parameter will be displayed in the the test result.
 
 ```yaml
@@ -70,6 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

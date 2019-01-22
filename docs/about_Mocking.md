@@ -1,13 +1,16 @@
 # Mocking
+
 ## about_Mocking
 
 # SHORT DESCRIPTION
+
 Pester provides a set of Mocking functions making it easy to fake dependencies
 and also to verify behavior. Using these mocking functions can allow you to
 "shim" a data layer or mock other complex functions that already have their
 own tests.
 
 # LONG DESCRIPTION
+
 With the set of Mocking functions that Pester exposes, one can:
 
 - Mock the behavior of ANY PowerShell command.
@@ -19,18 +22,19 @@ With the set of Mocking functions that Pester exposes, one can:
   For detailed information about the functions in the Pester module, use Get-Help.
 
   Mock
-    Mocks the behavior of an existing command with an alternate
-    implementation.
+  Mocks the behavior of an existing command with an alternate
+  implementation.
 
   Assert-VerifiableMock
-    Checks if any Verifiable Mock has not been invoked. If so, this will
-    throw an exception.
+  Checks if any Verifiable Mock has not been invoked. If so, this will
+  throw an exception.
 
   Assert-MockCalled
-    Checks if a Mocked command has been called a certain number of times
-    and throws an exception if it has not.
+  Checks if a Mocked command has been called a certain number of times
+  and throws an exception if it has not.
 
 # EXAMPLES
+
 ```powershell
     function Build ($version) {
         Write-Host "a build was run for version: $version"
@@ -76,9 +80,9 @@ With the set of Mocking functions that Pester exposes, one can:
     }
 ```
 
-  MOCKING CALLS TO COMMANDS MADE FROM INSIDE SCRIPT MODULES
+MOCKING CALLS TO COMMANDS MADE FROM INSIDE SCRIPT MODULES
 
-  Let's say you have code like this inside a script module (.psm1 file):
+Let's say you have code like this inside a script module (.psm1 file):
 
     function BuildIfChanged {
       $thisVersion = Get-Version
@@ -100,12 +104,12 @@ With the set of Mocking functions that Pester exposes, one can:
 
     Export-ModuleMember -Function BuildIfChanged
 
-  Beginning in Pester 3.0, there are two ways to write a unit test for a module that
-  mocks the calls to Get-Version and Get-NextVersion from the module's BuildIfChanged
-  command. The first is to inject mocks into a module:
+Beginning in Pester 3.0, there are two ways to write a unit test for a module that
+mocks the calls to Get-Version and Get-NextVersion from the module's BuildIfChanged
+command. The first is to inject mocks into a module:
 
-  In these examples, the PSM1 file, MyModule.psm1 is installed in $env:PSModulePath on
-  the local computer.
+In these examples, the PSM1 file, MyModule.psm1 is installed in \$env:PSModulePath on
+the local computer.
 
     Import-Module MyModule
 
@@ -147,17 +151,16 @@ With the set of Mocking functions that Pester exposes, one can:
       }
     }
 
+In this sample test script, all calls to Mock and Assert-MockCalled have the
+-ModuleName MyModule parameter added. This tells Pester to inject the mock into the module scope,
+which causes any calls to those commands from inside the module to execute the mock instead.
 
-  In this sample test script, all calls to Mock and Assert-MockCalled have the
-  -ModuleName MyModule parameter added. This tells Pester to inject the mock into the module scope,
-  which causes any calls to those commands from inside the module to execute the mock instead.
+When you write your test script this way, you can mock commands that are called by the module's
+internal functions. However, your test script is still limited to accessing the public, exported
+members of the module. For example, you could not call the Build function directly.
 
-  When you write your test script this way, you can mock commands that are called by the module's
-  internal functions. However, your test script is still limited to accessing the public, exported
-  members of the module. For example, you could not call the Build function directly.
-
-  The InModuleScope command causes entire sections of your test script to execute inside the targeted
-  script module. This gives you access to unexported members of the module. For example:
+The InModuleScope command causes entire sections of your test script to execute inside the targeted
+script module. This gives you access to unexported members of the module. For example:
 
     Import-Module MyModule
 
@@ -176,17 +179,18 @@ With the set of Mocking functions that Pester exposes, one can:
       }
     }
 
-  When using InModuleScope, you no longer need to specify a ModuleName parameter when calling
-  Mock or Assert-MockCalled for commands in the module. You can also directly call the Build
-  function that the module does not export.
+When using InModuleScope, you no longer need to specify a ModuleName parameter when calling
+Mock or Assert-MockCalled for commands in the module. You can also directly call the Build
+function that the module does not export.
 
 SEE ALSO
 
-
 # NOTE
+
 {{ Note Placeholder - Additional information that a user needs to know.}}
 
 # TROUBLESHOOTING NOTE
+
 {{ Troubleshooting Placeholder - Warns users of bugs}}
 
 {{ Explains behavior that is likely to change with fixes }}

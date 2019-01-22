@@ -8,6 +8,7 @@ schema: 2.0.0
 # Invoke-Mock
 
 ## SYNOPSIS
+
 This command is used by Pester's Mocking framework.
 You do not need to call it directly.
 
@@ -20,11 +21,13 @@ Invoke-Mock [-CommandName] <String> [-MockCallState] <Hashtable> [[-ModuleName] 
 ```
 
 ## DESCRIPTION
+
 {{Fill in the Description}}
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -34,6 +37,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CommandName
+
 {{Fill CommandName Description}}
 
 ```yaml
@@ -49,6 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -MockCallState
+
 {{Fill MockCallState Description}}
 
 ```yaml
@@ -64,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleName
+
 {{Fill ModuleName Description}}
 
 ```yaml
@@ -79,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -BoundParameters
+
 {{Fill BoundParameters Description}}
 
 ```yaml
@@ -94,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
+
 {{Fill ArgumentList Description}}
 
 ```yaml
@@ -109,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -CallerSessionState
+
 {{Fill CallerSessionState Description}}
 
 ```yaml
@@ -124,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -FromBlock
+
 {{Fill FromBlock Description}}
 
 ```yaml
@@ -139,6 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 {{Fill InputObject Description}}
 
 ```yaml
@@ -154,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

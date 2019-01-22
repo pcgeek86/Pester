@@ -8,6 +8,7 @@ schema: 2.0.0
 # Mock
 
 ## SYNOPSIS
+
 Mocks the behavior of an existing command with an alternate
 implementation.
 
@@ -19,6 +20,7 @@ Mock [[-CommandName] <String>] [[-MockWith] <ScriptBlock>] [-Verifiable] [[-Para
 ```
 
 ## DESCRIPTION
+
 This creates new behavior for any existing command within the scope of a
 Describe or Context block.
 The function allows you to specify a script block
@@ -61,6 +63,7 @@ Each module's mock maintains a separate call history and verified status.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} }
 ```
@@ -69,6 +72,7 @@ Using this Mock, all calls to Get-ChildItem will return a hashtable with a
 FullName property returning "A_File.TXT"
 
 ### EXAMPLE 2
+
 ```
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp) }
 ```
@@ -76,6 +80,7 @@ Mock Get-ChildItem { return @{FullName = "A_File.TXT"} } -ParameterFilter { $Pat
 This Mock will only be applied to Get-ChildItem calls within the user's temp directory.
 
 ### EXAMPLE 3
+
 ```
 Mock Set-Content {} -Verifiable -ParameterFilter { $Path -eq "some_path" -and $Value -eq "Expected Value" }
 ```
@@ -84,6 +89,7 @@ When this mock is used, if the Mock is never invoked and Assert-VerifiableMock i
 The command behavior will do nothing since the ScriptBlock is empty.
 
 ### EXAMPLE 4
+
 ```
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp\1) }
 ```
@@ -96,18 +102,20 @@ The parameter filter determines which is invoked.
 Here, if Get-ChildItem is called on the "2" directory of the temp folder, then B_File.txt will be returned.
 
 ### EXAMPLE 5
+
 ```
 Mock Get-ChildItem { return @{FullName="B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
 ```
 
-Mock Get-ChildItem { return @{FullName="A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp) }
+Mock Get-ChildItem { return @{FullName="A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith(\$env:temp) }
 
-Get-ChildItem $env:temp\me
+Get-ChildItem \$env:temp\me
 
 Here, both mocks could apply since both filters will pass.
 A_File.TXT will be returned because it was the most recent Mock created.
 
 ### EXAMPLE 6
+
 ```
 Mock Get-ChildItem { return @{FullName = "B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
 ```
@@ -120,19 +128,21 @@ Here, A_File.TXT will be returned.
 Since no filter was specified, it will apply to any call to Get-ChildItem that does not pass another filter.
 
 ### EXAMPLE 7
+
 ```
 Mock Get-ChildItem { return @{FullName = "B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
 ```
 
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} }
 
-Get-ChildItem $env:temp\me
+Get-ChildItem \$env:temp\me
 
 Here, B_File.TXT will be returned.
 Even though the filterless mock was created more recently.
 This illustrates that filterless Mocks are always evaluated last regardless of their creation order.
 
 ### EXAMPLE 8
+
 ```
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} } -ModuleName MyTestModule
 ```
@@ -141,15 +151,17 @@ Using this Mock, all calls to Get-ChildItem from within the MyTestModule module
 will return a hashtable with a FullName property returning "A_File.TXT"
 
 ### EXAMPLE 9
+
 ```
 Get-Module -Name ModuleMockExample | Remove-Module
 ```
 
-New-Module -Name ModuleMockExample  -ScriptBlock {
-    function Hidden { "Internal Module Function" }
-    function Exported { Hidden }
+New-Module -Name ModuleMockExample -ScriptBlock {
+function Hidden { "Internal Module Function" }
+function Exported { Hidden }
 
     Export-ModuleMember -Function Exported
+
 } | Import-Module -Force
 
 Describe "ModuleMockExample" {
@@ -166,6 +178,7 @@ Describe "ModuleMockExample" {
         Mock Hidden { "Mocked" } -ModuleName ModuleMockExample
         Exported | Should -Be "Mocked"
     }
+
 }
 
 This example shows how calls to commands made from inside a module can be
@@ -174,6 +187,7 @@ mocked by using the -ModuleName parameter.
 ## PARAMETERS
 
 ### -CommandName
+
 The name of the command to be mocked.
 
 ```yaml
@@ -189,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -MockWith
+
 A ScriptBlock specifying the behavior that will be used to mock CommandName.
 The default is an empty ScriptBlock.
 NOTE: Do not specify param or dynamicparam blocks in this script block.
@@ -209,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -Verifiable
+
 When this is set, the mock will be checked when Assert-VerifiableMock is
 called.
 
@@ -225,6 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterFilter
+
 An optional filter to limit mocking behavior only to usages of
 CommandName where the values of the parameters passed to the command
 pass the filter.
@@ -239,12 +256,13 @@ Aliases:
 
 Required: False
 Position: 3
-Default value: {$True}
+Default value: { $True }
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ModuleName
+
 Optional string specifying the name of the module where this command
 is to be mocked.
 This should be a module that _calls_ the mocked
@@ -264,6 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

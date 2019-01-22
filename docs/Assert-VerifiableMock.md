@@ -8,6 +8,7 @@ schema: 2.0.0
 # Assert-VerifiableMock
 
 ## SYNOPSIS
+
 Checks if any Verifiable Mock has not been invoked.
 If so, this will throw an exception.
 
@@ -18,6 +19,7 @@ Assert-VerifiableMock [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 This can be used in tandem with the -Verifiable switch of the Mock
 function.
 Mock can be used to mock the behavior of an existing command
@@ -31,6 +33,7 @@ have not been invoked, an exception will be thrown.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Mock Set-Content {} -Verifiable -ParameterFilter {$Path -eq "some_path" -and $Value -eq "Expected Value"}
 ```
@@ -43,6 +46,7 @@ Assert-VerifiableMock
 This will throw an exception and cause the test to fail.
 
 ### EXAMPLE 2
+
 ```
 Mock Set-Content {} -Verifiable -ParameterFilter {$Path -eq "some_path" -and $Value -eq "Expected Value"}
 ```
@@ -56,6 +60,7 @@ This will not throw an exception because the mock was invoked.
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

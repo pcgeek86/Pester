@@ -1,11 +1,14 @@
 # BeforeEach_AfterEach
+
 ## about_BeforeEach_AfterEach
 
 # SHORT DESCRIPTION
+
 Describes the BeforeEach and AfterEach commands, which run a set of commands
 that you specify before or after every It block.
 
 # LONG DESCRIPTION
+
 The the BeforeEach and AfterEach commands in the Pester module let you define
 setup and teardown tasks that are performed at the beginning and end of every
 It block. This can eliminate duplication of code in test scripts, ensure that
@@ -26,7 +29,7 @@ inside the body of the It block.
 
 BeforeAll and AfterAll are used the same way as BeforeEach and AfterEach,
 except that they are executed at the beginning and end of their containing
-Describe or Context block.  This is essentially syntactic sugar for the following
+Describe or Context block. This is essentially syntactic sugar for the following
 arrangement of code:
 
 ```powershell
@@ -105,4 +108,3 @@ Describe 'Testing BeforeEach and AfterEach' {
 - AfterEach
 - BeforeAll
 - AfterAll
-

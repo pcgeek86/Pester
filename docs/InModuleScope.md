@@ -8,6 +8,7 @@ schema: 2.0.0
 # InModuleScope
 
 ## SYNOPSIS
+
 Allows you to execute parts of a test script within the
 scope of a PowerShell script module.
 
@@ -18,6 +19,7 @@ InModuleScope [-ModuleName] <String> [-ScriptBlock] <ScriptBlock> [<CommonParame
 ```
 
 ## DESCRIPTION
+
 By injecting some test code into the scope of a PowerShell
 script module, you can use non-exported functions, aliases
 and variables inside that module, to perform unit tests on
@@ -29,18 +31,18 @@ either inside or outside a Describe block.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 # The script module:
 ```
 
 function PublicFunction
-{
-    # Does something
+{ # Does something
 }
 
 function PrivateFunction
 {
-    return $true
+return \$true
 }
 
 Export-ModuleMember -Function PublicFunction
@@ -50,11 +52,11 @@ Export-ModuleMember -Function PublicFunction
 Import-Module MyModule
 
 InModuleScope MyModule {
-    Describe 'Testing MyModule' {
-        It 'Tests the Private function' {
-            PrivateFunction | Should -Be $true
-        }
-    }
+Describe 'Testing MyModule' {
+It 'Tests the Private function' {
+PrivateFunction | Should -Be \$true
+}
+}
 }
 
 Normally you would not be able to access "PrivateFunction" from
@@ -66,6 +68,7 @@ Using InModuleScope allowed this call to
 ## PARAMETERS
 
 ### -ModuleName
+
 The name of the module into which the test code should be
 injected.
 This module must already be loaded into the current
@@ -84,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
+
 The code to be executed within the script module.
 
 ```yaml
@@ -99,6 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

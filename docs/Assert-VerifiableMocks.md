@@ -9,6 +9,7 @@ schema: 2.0.0
 # Assert-VerifiableMocks
 
 ## SYNOPSIS
+
 The function is for backward compatibility only.
 Please update your code and use 'Assert-VerifiableMock' instead.
 
@@ -19,6 +20,7 @@ Assert-VerifiableMocks [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The function was reintroduced in the version 4.0.8 of Pester to avoid loading older version of Pester when Assert-VerifiableMocks is called.
 
 The function will be removed finally in the next major version of Pester.
@@ -26,6 +28,7 @@ The function will be removed finally in the next major version of Pester.
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -35,6 +38,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -47,4 +51,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4](https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4)
 
-[https://github.com/pester/Pester/issues/880][https://github.com/pester/Pester/issues/880)
+[https://github.com/pester/Pester/issues/880]https://github.com/pester/Pester/issues/880)

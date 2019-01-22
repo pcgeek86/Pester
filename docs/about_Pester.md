@@ -1,16 +1,20 @@
 # Pester
+
 ## about_Pester
 
 # SHORT DESCRIPTION
+
 Pester is a test framework for Windows PowerShell. Use the Pester language
 and its commands to write and run tests that verify that your scripts and
 modules work as designed.
 
 Pester 4.x supports
+
 - Windows PowerShell 2.0 and greater
 - PowerShell Core 6.0 and grater
 
 # LONG DESCRIPTION
+
 Pester introduces a professional test framework for Windows PowerShell
 commands. You can use Pester to test commands of any supported type,
 including scripts, cmdlets, functions, CIM commands, workflows, and DSC
@@ -54,6 +58,7 @@ or database, or commenting-out and inserting code just for testing. For more
 information, see about_Mocking.
 
 ## THE PESTER LANGUAGE
+
 To make it easier to write tests, Pester uses a language especially designed
 for testing. This "domain-specific language" (DSL) hides the standard
 verb-noun syntax of PowerShell commands.
@@ -64,7 +69,7 @@ you don't typically use parameter names.
 For example, this "gets all widgets" test uses the Pester language,
 including its "It", "Should", and "Be" commands. The test verifies that the
 actual output of the Get-Widget cmdlet is the same as the expected value in
-the $allWidgets variables.
+the \$allWidgets variables.
 
 ```powershell
     It "gets all widgets" {
@@ -75,14 +80,15 @@ the $allWidgets variables.
 To learn the Pester language, start by reading the following About and
 cmdlet help topics:
 
-- Describe:     Creates a required test container.
-- Context:      Creates an optional scoped test sub-container.
-- It:           Creates a test.
-- about_Should  Compares actual to expected values. This topic also
-                    lists all valid values of Be, which specify the
-                    comparison operator used in the test.
+- Describe: Creates a required test container.
+- Context: Creates an optional scoped test sub-container.
+- It: Creates a test.
+- about_Should Compares actual to expected values. This topic also
+  lists all valid values of Be, which specify the
+  comparison operator used in the test.
 
 ## HOW TO CREATE TEST FILES
+
 To start using Pester, create a script and a test file that tests the
 script. If you already have a script, you can create a test file for it.
 
@@ -141,11 +147,10 @@ This code assumes that the script has the same base name and is located in
 the same directory as the test file.
 
 You can use any code in the test file that finds the script, but be sure
-that the test file has the required *.Tests.ps1 file name extension.
-
-
+that the test file has the required \*.Tests.ps1 file name extension.
 
 ## HOW TO RUN PESTER TESTS
+
 Pester tests are Windows PowerShell scripts (.ps1 files), so you can run
 them at the command line, or in any editor.
 
@@ -186,7 +191,8 @@ test.
 
 For more information about Invoke-Pester, type: Get-Help Invoke-Pester
 
-##  PESTER TEST OUTPUT
+## PESTER TEST OUTPUT
+
 When you run a test, Pester use a variation of Write-Host to write
 color-coded text to the console. You'll quickly learn to recognize the
 purple test names and green (passing) and red (failing) test results with
@@ -220,6 +226,7 @@ LegacyNUnitXml formats that are easy to parse and commonly used by reporting
 tools.
 
 ## REAL-WORLD EXAMPLES
+
 For help in writing Pester tests, examine the extensive collection of tests
 that Pester uses to verify its Windows PowerShell code.
 
@@ -229,7 +236,7 @@ To find the Pester tests in the Pester module directory, type:
 
     -or-
 
-dir (Get-Module Pester -ListAvailable).ModuleBase -Include *Tests.ps1 -Recurse
+dir (Get-Module Pester -ListAvailable).ModuleBase -Include \*Tests.ps1 -Recurse
 
 # EXAMPLES
 

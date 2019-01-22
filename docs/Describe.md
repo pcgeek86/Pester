@@ -8,6 +8,7 @@ schema: 2.0.0
 # Describe
 
 ## SYNOPSIS
+
 Creates a logical group of tests.
 
 ## SYNTAX
@@ -17,6 +18,7 @@ Describe [-Name] <String> [-Tag <String[]>] [[-Fixture] <ScriptBlock>] [<CommonP
 ```
 
 ## DESCRIPTION
+
 Creates a logical group of tests.
 All Mocks and TestDrive contents
 
@@ -28,6 +30,7 @@ block may contain any number of Context and It blocks.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 function Add-Numbers($a, $b) {
 ```
@@ -36,10 +39,10 @@ return $a + $b
 }
 
 Describe "Add-Numbers" {
-    It "adds positive numbers" {
-        $sum = Add-Numbers 2 3
+It "adds positive numbers" {
+$sum = Add-Numbers 2 3
         $sum | Should -Be 5
-    }
+}
 
     It "adds negative numbers" {
         $sum = Add-Numbers (-2) (-2)
@@ -55,11 +58,13 @@ Describe "Add-Numbers" {
         $sum = Add-Numbers two three
         $sum | Should -Be "twothree"
     }
+
 }
 
 ## PARAMETERS
 
 ### -Name
+
 The name of the test group.
 This is often an expressive phrase describing
 the scenario being tested.
@@ -77,6 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Optional parameter containing an array of strings.
 When calling Invoke-Pester,
 it is possible to specify a -Tag parameter which will only execute Describe blocks
@@ -95,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Fixture
+
 The actual test script.
 If you are following the AAA pattern (Arrange-Act-Assert),
 this typically holds the arrange and act sections.
@@ -116,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

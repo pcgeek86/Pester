@@ -8,6 +8,7 @@ schema: 2.0.0
 # Context
 
 ## SYNOPSIS
+
 Provides logical grouping of It blocks within a single Describe block.
 
 ## SYNTAX
@@ -17,6 +18,7 @@ Context [-Name] <String> [-Tag <String[]>] [[-Fixture] <ScriptBlock>] [<CommonPa
 ```
 
 ## DESCRIPTION
+
 Provides logical grouping of It blocks within a single Describe block.
 Any Mocks defined inside a Context are removed at the end of the Context scope,
 as are any files or folders added to the TestDrive during the Context block's
@@ -27,6 +29,7 @@ apply to tests within that Context .
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 function Add-Numbers($a, $b) {
 ```
@@ -38,22 +41,25 @@ Describe "Add-Numbers" {
 
     Context "when root does not exist" {
          It "..." { ...
+
 }
-    }
+}
 
     Context "when root does exist" {
         It "..." { ...
+
 }
-        It "..." { ...
+It "..." { ...
 }
-        It "..." { ...
+It "..." { ...
 }
-    }
+}
 }
 
 ## PARAMETERS
 
 ### -Name
+
 The name of the Context.
 This is a phrase describing a set of tests within a describe.
 
@@ -70,6 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Optional parameter containing an array of strings.
 When calling Invoke-Pester,
 it is possible to specify a -Tag parameter which will only execute Context blocks
@@ -88,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Fixture
+
 Script that is executed.
 This may include setup specific to the context
 and one or more It blocks that validate the expected outcomes.
@@ -105,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

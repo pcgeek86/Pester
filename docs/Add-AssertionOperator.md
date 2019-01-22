@@ -8,6 +8,7 @@ schema: 2.0.0
 # Add-AssertionOperator
 
 ## SYNOPSIS
+
 Register an Assertion Operator with Pester
 
 ## SYNTAX
@@ -18,11 +19,13 @@ Add-AssertionOperator [-Name] <String> [-Test] <ScriptBlock> [[-Alias] <String[]
 ```
 
 ## DESCRIPTION
+
 This function allows you to create custom Should assertions.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 function BeAwesome($ActualValue, [switch] $Negate)
 ```
@@ -48,11 +51,12 @@ function BeAwesome($ActualValue, [switch] $Negate)
         Succeeded      = $succeeded
         FailureMessage = $failureMessage
     }
+
 }
 
-Add-AssertionOperator -Name  BeAwesome \`
-                    -Test  $function:BeAwesome \`
-                    -Alias 'BA'
+Add-AssertionOperator -Name BeAwesome \`
+-Test \$function:BeAwesome \`
+-Alias 'BA'
 
 PS C:\\\> "bad" | should -BeAwesome
 {bad} is not Awesome
@@ -60,6 +64,7 @@ PS C:\\\> "bad" | should -BeAwesome
 ## PARAMETERS
 
 ### -Name
+
 The name of the assertion.
 This will become a Named Parameter of Should.
 
@@ -76,6 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Test
+
 The test function.
 The function must return a PSObject with a \[Bool\]succeeded and a \[string\]failureMessage property.
 
@@ -92,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Alias
+
 A list of aliases for the Named Parameter.
 
 ```yaml
@@ -107,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -InternalName
+
 If -Name is different from the actual function name, record the actual function name here.
 Used by Get-ShouldOperator to pull function help.
 
@@ -123,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportsArrayInput
+
 Does the test function support the passing an array of values to test.
 
 ```yaml
@@ -138,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

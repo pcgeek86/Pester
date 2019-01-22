@@ -8,29 +8,34 @@ schema: 2.0.0
 # Get-MockDynamicParameter
 
 ## SYNOPSIS
+
 This command is used by Pester's Mocking framework.
 You do not need to call it directly.
 
 ## SYNTAX
 
 ### Cmdlet
+
 ```
 Get-MockDynamicParameter -CmdletName <String> [-Parameters <IDictionary>] [-Cmdlet <Object>]
  [<CommonParameters>]
 ```
 
 ### Function
+
 ```
 Get-MockDynamicParameter -FunctionName <String> [-ModuleName <String>] [-Parameters <IDictionary>]
  [-Cmdlet <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 {{Fill in the Description}}
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -40,6 +45,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CmdletName
+
 {{Fill CmdletName Description}}
 
 ```yaml
@@ -55,6 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionName
+
 {{Fill FunctionName Description}}
 
 ```yaml
@@ -70,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleName
+
 {{Fill ModuleName Description}}
 
 ```yaml
@@ -85,6 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
+
 {{Fill Parameters Description}}
 
 ```yaml
@@ -100,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Cmdlet
+
 {{Fill Cmdlet Description}}
 
 ```yaml
@@ -115,6 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

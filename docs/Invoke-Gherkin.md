@@ -8,11 +8,13 @@ schema: 2.0.0
 # Invoke-Gherkin
 
 ## SYNOPSIS
+
 Invokes Pester to run all tests defined in .feature files
 
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Invoke-Gherkin [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-CodeCoverage <Object[]>] [-Strict] [-OutputFile <String>] [-OutputFormat <String>]
@@ -20,6 +22,7 @@ Invoke-Gherkin [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-
 ```
 
 ### RetestFailed
+
 ```
 Invoke-Gherkin [-FailedLast] [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-CodeCoverage <Object[]>] [-Strict] [-OutputFile <String>] [-OutputFormat <String>]
@@ -27,7 +30,8 @@ Invoke-Gherkin [-FailedLast] [[-Path] <String>] [[-ScenarioName] <String[]>] [-E
 ```
 
 ## DESCRIPTION
-Upon calling Invoke-Gherkin, all files that have a name matching *.feature in the current folder (and child folders recursively), will be parsed and executed.
+
+Upon calling Invoke-Gherkin, all files that have a name matching \*.feature in the current folder (and child folders recursively), will be parsed and executed.
 
 If ScenarioName is specified, only scenarios which match the provided name(s) will be run.
 If FailedLast is specified, only scenarios which failed the previous run will be re-executed.
@@ -37,21 +41,24 @@ Optionally, Pester can generate a report of how much code is covered by the test
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Invoke-Gherkin
 ```
 
-This will find all *.feature specifications and execute their tests.
+This will find all \*.feature specifications and execute their tests.
 No exit code will be returned and no log file will be saved.
 
 ### EXAMPLE 2
+
 ```
 Invoke-Gherkin -Path ./tests/Utils*
 ```
 
-This will run all *.feature specifications under ./Tests that begin with Utils.
+This will run all \*.feature specifications under ./Tests that begin with Utils.
 
 ### EXAMPLE 3
+
 ```
 Invoke-Gherkin -ScenarioName "Add Numbers"
 ```
@@ -59,6 +66,7 @@ Invoke-Gherkin -ScenarioName "Add Numbers"
 This will only run the Scenario named "Add Numbers"
 
 ### EXAMPLE 4
+
 ```
 Invoke-Gherkin -EnableExit -OutputXml "./artifacts/TestResults.xml"
 ```
@@ -67,29 +75,33 @@ This runs all tests from the current directory downwards and writes the results 
 The test run will return an exit code equal to the number of test failures.
 
 ### EXAMPLE 5
+
 ```
 Invoke-Gherkin -CodeCoverage 'ScriptUnderTest.ps1'
 ```
 
-Runs all *.feature specifications in the current directory, and generates a coverage report for all commands in the "ScriptUnderTest.ps1" file.
+Runs all \*.feature specifications in the current directory, and generates a coverage report for all commands in the "ScriptUnderTest.ps1" file.
 
 ### EXAMPLE 6
+
 ```
 Invoke-Gherkin -CodeCoverage @{ Path = 'ScriptUnderTest.ps1'; Function = 'FunctionUnderTest' }
 ```
 
-Runs all *.feature specifications in the current directory, and generates a coverage report for all commands in the "FunctionUnderTest" function in the "ScriptUnderTest.ps1" file.
+Runs all \*.feature specifications in the current directory, and generates a coverage report for all commands in the "FunctionUnderTest" function in the "ScriptUnderTest.ps1" file.
 
 ### EXAMPLE 7
+
 ```
 Invoke-Gherkin -CodeCoverage @{ Path = 'ScriptUnderTest.ps1'; StartLine = 10; EndLine = 20 }
 ```
 
-Runs all *.feature specifications in the current directory, and generates a coverage report for all commands on lines 10 through 20 in the "ScriptUnderTest.ps1" file.
+Runs all \*.feature specifications in the current directory, and generates a coverage report for all commands on lines 10 through 20 in the "ScriptUnderTest.ps1" file.
 
 ## PARAMETERS
 
 ### -FailedLast
+
 Rerun only the scenarios which failed last time
 
 ```yaml
@@ -105,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 This parameter indicates which feature files should be tested.
 
 Aliased to 'Script' for compatibility with Pester, but does not support hashtables, since feature files don't take parameters.
@@ -122,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScenarioName
+
 When set, invokes testing of scenarios which match this name.
 
 Aliased to 'Name' and 'TestName' for compatibility with Pester.
@@ -139,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableExit
+
 Will cause Invoke-Gherkin to exit with a exit code equal to the number of failed tests once all tests have been run.
 Use this to "fail" a build when any tests fail.
 
@@ -155,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Filters Scenarios and Features and runs only the ones tagged with the specified tags.
 
 ```yaml
@@ -170,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeTag
+
 Informs Invoke-Gherkin to not run blocks tagged with the tags specified.
 
 ```yaml
@@ -185,6 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -CodeCoverage
+
 Instructs Pester to generate a code coverage report in addition to running tests.
 You may pass either hashtables or strings to this parameter.
 
@@ -213,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -Strict
+
 Makes Pending and Skipped tests to Failed tests.
 Useful for continuous integration where you need
 to make sure all tests passed.
@@ -230,6 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFile
+
 The path to write a report file to.
 If this path is not provided, no log will be generated.
 
@@ -246,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFormat
+
 The format for output (LegacyNUnitXml or NUnitXml), defaults to NUnitXml
 
 ```yaml
@@ -261,6 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 Disables the output Pester writes to screen.
 No other output is generated unless you specify PassThru,
 or one of the Output parameters.
@@ -278,6 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -PesterOption
+
 Sets advanced options for the test execution.
 Enter a PesterOption object,
 such as one that you create by using the New-PesterOption cmdlet, or a hash table
@@ -297,6 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -Show
+
 Customizes the output Pester writes to the screen.
 Available options are None, Default,
 Passed, Failed, Pending, Skipped, Inconclusive, Describe, Context, Summary, Header, All, Fails.
@@ -327,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns a custom object (PSCustomObject) that contains the test results.
 By default, Invoke-Gherkin writes to the host program, not to the output stream (stdout).
 If you try to save the result in a variable, the variable is empty unless you
@@ -346,6 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

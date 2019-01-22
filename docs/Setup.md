@@ -8,6 +8,7 @@ schema: 2.0.0
 # Setup
 
 ## SYNOPSIS
+
 This command is included in the Pester Mocking framework for backwards compatibility.
 You do not need to call it directly.
 
@@ -18,11 +19,13 @@ Setup [-Dir] [-File] [[-Path] <Object>] [[-Content] <Object>] [-PassThru]
 ```
 
 ## DESCRIPTION
+
 {{Fill in the Description}}
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -32,6 +35,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -Dir
+
 {{Fill Dir Description}}
 
 ```yaml
@@ -47,6 +51,7 @@ Accept wildcard characters: False
 ```
 
 ### -File
+
 {{Fill File Description}}
 
 ```yaml
@@ -62,6 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 {{Fill Path Description}}
 
 ```yaml
@@ -77,6 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -Content
+
 {{Fill Content Description}}
 
 ```yaml
@@ -92,6 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 {{Fill PassThru Description}}
 
 ```yaml

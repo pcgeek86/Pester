@@ -8,21 +8,25 @@ schema: 2.0.0
 # BeforeEachScenario
 
 ## SYNOPSIS
+
 Defines a ScriptBlock hook to run before each scenario to set up the test environment
 
 ## SYNTAX
 
 ### All (Default)
+
 ```
 BeforeEachScenario [-Script] <ScriptBlock> [<CommonParameters>]
 ```
 
 ### Tags
+
 ```
 BeforeEachScenario [-Tags] <String[]> [-Script] <ScriptBlock> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 BeforeEachScenario hooks are run before each scenario that is in (or above) the folder where the hook is defined.
 
 You should not normally need this, because it overlaps significantly with the "Background" feature in the gherkin language.
@@ -33,6 +37,7 @@ there is not a simple test script where you can put setup and clean up.
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -42,6 +47,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -Tags
+
 Optional tags.
 If set, this hook only runs for features with matching tags
 
@@ -58,6 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Script
+
 The ScriptBlock to run for the hook
 
 ```yaml
@@ -73,6 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

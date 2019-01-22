@@ -9,6 +9,7 @@ schema: 2.0.0
 # Get-ShouldOperator
 
 ## SYNOPSIS
+
 Display the assertion operators available for use with Should.
 
 ## SYNTAX
@@ -18,6 +19,7 @@ Get-ShouldOperator [-Name <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Get-ShouldOperator returns a list of available Should parameters,
 their aliases, and examples to help you craft the tests you need.
 
@@ -27,6 +29,7 @@ including any registered by the user with Add-AssertionOperator.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 Get-ShouldOperator
 ```
@@ -34,6 +37,7 @@ Get-ShouldOperator
 Return all available Should assertion operators and their aliases.
 
 ### EXAMPLE 2
+
 ```
 Get-ShouldOperator -Name Be
 ```
@@ -44,6 +48,7 @@ Return help examples for the Be assertion operator.
 ## PARAMETERS
 
 ### -Name
+
 {{Fill Name Description}}
 
 ```yaml
@@ -59,6 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -67,10 +73,11 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## OUTPUTS
 
 ## NOTES
+
 Pester uses dynamic parameters to populate Should arguments.
 
 This limits the user's ability to discover the available assertions via
-standard PowerShell discovery patterns (like \`Get-Help Should -Parameter *\`).
+standard PowerShell discovery patterns (like \`Get-Help Should -Parameter \*\`).
 
 ## RELATED LINKS
 

@@ -8,21 +8,25 @@ schema: 2.0.0
 # BeforeEachFeature
 
 ## SYNOPSIS
+
 Defines a ScriptBlock hook to run before each feature to set up the test environment
 
 ## SYNTAX
 
 ### All (Default)
+
 ```
 BeforeEachFeature [-Script] <ScriptBlock> [<CommonParameters>]
 ```
 
 ### Tags
+
 ```
 BeforeEachFeature [-Tags] <String[]> [-Script] <ScriptBlock> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 BeforeEachFeature hooks are run before each feature that is in (or above) the folder where the hook is defined.
 
 This is a convenience method, provided because unlike traditional RSpec Pester,
@@ -31,6 +35,7 @@ there is not a simple test script where you can put setup and clean up.
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -40,6 +45,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -Tags
+
 Optional tags.
 If set, this hook only runs for features with matching tags
 
@@ -56,6 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Script
+
 The ScriptBlock to run for the hook
 
 ```yaml
@@ -71,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

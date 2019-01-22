@@ -8,26 +8,31 @@ schema: 2.0.0
 # It
 
 ## SYNOPSIS
+
 Validates the results of a test inside of a Describe block.
 
 ## SYNTAX
 
 ### Normal (Default)
+
 ```
 It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [<CommonParameters>]
 ```
 
 ### Pending
+
 ```
 It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Pending] [<CommonParameters>]
 ```
 
 ### Skip
+
 ```
 It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Skip] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The It command is intended to be used inside of a Describe or Context Block.
 If you are familiar with the AAA pattern (Arrange-Act-Assert), the body of
 the It block is the appropriate location for an assert.
@@ -48,6 +53,7 @@ command as the first tested statement in the It block.
 ## EXAMPLES
 
 ### EXAMPLE 1
+
 ```
 function Add-Numbers($a, $b) {
 ```
@@ -56,10 +62,10 @@ return $a + $b
 }
 
 Describe "Add-Numbers" {
-    It "adds positive numbers" {
-        $sum = Add-Numbers 2 3
+It "adds positive numbers" {
+$sum = Add-Numbers 2 3
         $sum | Should -Be 5
-    }
+}
 
     It "adds negative numbers" {
         $sum = Add-Numbers (-2) (-2)
@@ -75,9 +81,11 @@ Describe "Add-Numbers" {
         $sum = Add-Numbers two three
         $sum | Should -Be "twothree"
     }
+
 }
 
 ### EXAMPLE 2
+
 ```
 function Add-Numbers($a, $b) {
 ```
@@ -86,12 +94,12 @@ return $a + $b
 }
 
 Describe "Add-Numbers" {
-    $testCases = @(
-        @{ a = 2;     b = 3;       expectedResult = 5 }
-        @{ a = -2;    b = -2;      expectedResult = -4 }
-        @{ a = -2;    b = 2;       expectedResult = 0 }
-        @{ a = 'two'; b = 'three'; expectedResult = 'twothree' }
-    )
+\$testCases = @(
+@{ a = 2; b = 3; expectedResult = 5 }
+@{ a = -2; b = -2; expectedResult = -4 }
+@{ a = -2; b = 2; expectedResult = 0 }
+@{ a = 'two'; b = 'three'; expectedResult = 'twothree' }
+)
 
     It 'Correctly adds \<a\> and \<b\> to get \<expectedResult\>' -TestCases $testCases {
         param ($a, $b, $expectedResult)
@@ -99,11 +107,13 @@ Describe "Add-Numbers" {
         $sum = Add-Numbers $a $b
         $sum | Should -Be $expectedResult
     }
+
 }
 
 ## PARAMETERS
 
 ### -name
+
 An expressive phrase describing the expected test outcome.
 
 ```yaml
@@ -119,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -test
+
 The script block that should throw an exception if the
 expectation of the test is not met.If you are following the
 AAA pattern (Arrange-Act-Assert), this typically holds the
@@ -137,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -TestCases
+
 Optional array of hashtable (or any IDictionary) objects.
 If this parameter is used,
 Pester will call the test script block once for each table in the TestCases array,
@@ -159,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pending
+
 Use this parameter to explicitly mark the test as work-in-progress/not implemented/pending when you
 need to distinguish a test that fails because it is not finished yet from a tests
 that fail as a result of changes being made in the code base.
@@ -178,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
+
 Use this parameter to explicitly mark the test to be skipped.
 This is preferable to temporarily
 commenting out a test, because the test remains listed in the output.
@@ -197,6 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 

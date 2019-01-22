@@ -8,144 +8,169 @@ schema: 2.0.0
 # Should
 
 ## SYNOPSIS
+
 Should is a keyword what is used to define an assertion inside It block.
 
 ## SYNTAX
 
 ### Legacy (Default)
+
 ```
 Should [[-__LegacyArg1] <Object>] [[-__LegacyArg2] <Object>] [[-__LegacyArg3] <Object>] [-ActualValue <Object>]
  [<CommonParameters>]
 ```
 
 ### Be
+
 ```
 Should [-ActualValue <Object>] [-Be] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [<CommonParameters>]
 ```
 
 ### BeExactly
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeExactly]
  [<CommonParameters>]
 ```
 
 ### BeGreaterThan
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeGreaterThan]
  [<CommonParameters>]
 ```
 
 ### BeLessOrEqual
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLessOrEqual]
  [<CommonParameters>]
 ```
 
 ### BeIn
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeIn]
  [<CommonParameters>]
 ```
 
 ### BeLessThan
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLessThan]
  [<CommonParameters>]
 ```
 
 ### BeGreaterOrEqual
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeGreaterOrEqual]
  [<CommonParameters>]
 ```
 
 ### BeLike
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLike]
  [<CommonParameters>]
 ```
 
 ### BeLikeExactly
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLikeExactly]
  [<CommonParameters>]
 ```
 
 ### BeNullOrEmpty
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeNullOrEmpty] [<CommonParameters>]
 ```
 
 ### BeOfType
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeOfType] [-ExpectedType <Object>]
  [<CommonParameters>]
 ```
 
 ### BeTrue
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeTrue] [<CommonParameters>]
 ```
 
 ### BeFalse
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeFalse] [<CommonParameters>]
 ```
 
 ### Contain
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-Contain]
  [<CommonParameters>]
 ```
 
 ### Exist
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Exist] [<CommonParameters>]
 ```
 
 ### FileContentMatch
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-FileContentMatch] [-ExpectedContent <Object>]
  [<CommonParameters>]
 ```
 
 ### FileContentMatchExactly
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-ExpectedContent <Object>]
  [-FileContentMatchExactly] [<CommonParameters>]
 ```
 
 ### FileContentMatchMultiline
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-ExpectedContent <Object>]
  [-FileContentMatchMultiline] [<CommonParameters>]
 ```
 
 ### HaveCount
+
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-HaveCount]
  [<CommonParameters>]
 ```
 
 ### Match
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Match] [-RegularExpression <Object>]
  [<CommonParameters>]
 ```
 
 ### MatchExactly
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-RegularExpression <Object>] [-MatchExactly]
  [<CommonParameters>]
 ```
 
 ### Throw
+
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Throw] [-ExpectedMessage <Object>]
  [-ErrorId <Object>] [-ExceptionType <Object>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Should is a keyword what is used to define an assertion inside the It block.
 Should provides assertion methods for verify assertion e.g.
 comparing objects.
@@ -159,6 +184,7 @@ Test will be passed only when all assertion will be met (logical conjuction).
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> {{ Add example code here }}
 ```
@@ -167,7 +193,8 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -__LegacyArg1
+### -\_\_LegacyArg1
+
 {{Fill __LegacyArg1 Description}}
 
 ```yaml
@@ -182,7 +209,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -__LegacyArg2
+### -\_\_LegacyArg2
+
 {{Fill __LegacyArg2 Description}}
 
 ```yaml
@@ -197,7 +225,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -__LegacyArg3
+### -\_\_LegacyArg3
+
 {{Fill __LegacyArg3 Description}}
 
 ```yaml
@@ -213,6 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActualValue
+
 {{Fill ActualValue Description}}
 
 ```yaml
@@ -228,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -Be
+
 {{Fill Be Description}}
 
 ```yaml
@@ -243,6 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -Because
+
 {{Fill Because Description}}
 
 ```yaml
@@ -258,6 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeExactly
+
 {{Fill BeExactly Description}}
 
 ```yaml
@@ -273,6 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeFalse
+
 {{Fill BeFalse Description}}
 
 ```yaml
@@ -288,6 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeGreaterOrEqual
+
 {{Fill BeGreaterOrEqual Description}}
 
 ```yaml
@@ -303,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeGreaterThan
+
 {{Fill BeGreaterThan Description}}
 
 ```yaml
@@ -318,6 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeIn
+
 {{Fill BeIn Description}}
 
 ```yaml
@@ -333,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeLessOrEqual
+
 {{Fill BeLessOrEqual Description}}
 
 ```yaml
@@ -348,6 +386,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeLessThan
+
 {{Fill BeLessThan Description}}
 
 ```yaml
@@ -363,6 +402,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeLike
+
 {{Fill BeLike Description}}
 
 ```yaml
@@ -378,6 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeLikeExactly
+
 {{Fill BeLikeExactly Description}}
 
 ```yaml
@@ -393,6 +434,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeNullOrEmpty
+
 {{Fill BeNullOrEmpty Description}}
 
 ```yaml
@@ -408,6 +450,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeOfType
+
 {{Fill BeOfType Description}}
 
 ```yaml
@@ -423,6 +466,7 @@ Accept wildcard characters: False
 ```
 
 ### -BeTrue
+
 {{Fill BeTrue Description}}
 
 ```yaml
@@ -438,6 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -Contain
+
 {{Fill Contain Description}}
 
 ```yaml
@@ -453,6 +498,7 @@ Accept wildcard characters: False
 ```
 
 ### -ErrorId
+
 {{Fill ErrorId Description}}
 
 ```yaml
@@ -468,6 +514,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExceptionType
+
 {{Fill ExceptionType Description}}
 
 ```yaml
@@ -483,6 +530,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exist
+
 {{Fill Exist Description}}
 
 ```yaml
@@ -498,6 +546,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpectedContent
+
 {{Fill ExpectedContent Description}}
 
 ```yaml
@@ -513,6 +562,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpectedMessage
+
 {{Fill ExpectedMessage Description}}
 
 ```yaml
@@ -528,6 +578,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpectedType
+
 {{Fill ExpectedType Description}}
 
 ```yaml
@@ -543,6 +594,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpectedValue
+
 {{Fill ExpectedValue Description}}
 
 ```yaml
@@ -558,6 +610,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileContentMatch
+
 {{Fill FileContentMatch Description}}
 
 ```yaml
@@ -573,6 +626,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileContentMatchExactly
+
 {{Fill FileContentMatchExactly Description}}
 
 ```yaml
@@ -588,6 +642,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileContentMatchMultiline
+
 {{Fill FileContentMatchMultiline Description}}
 
 ```yaml
@@ -603,6 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -HaveCount
+
 {{Fill HaveCount Description}}
 
 ```yaml
@@ -618,6 +674,7 @@ Accept wildcard characters: False
 ```
 
 ### -Match
+
 {{Fill Match Description}}
 
 ```yaml
@@ -633,6 +690,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchExactly
+
 {{Fill MatchExactly Description}}
 
 ```yaml
@@ -648,6 +706,7 @@ Accept wildcard characters: False
 ```
 
 ### -Not
+
 {{Fill Not Description}}
 
 ```yaml
@@ -663,6 +722,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 {{Fill PassThru Description}}
 
 ```yaml
@@ -678,6 +738,7 @@ Accept wildcard characters: False
 ```
 
 ### -RegularExpression
+
 {{Fill RegularExpression Description}}
 
 ```yaml
@@ -693,6 +754,7 @@ Accept wildcard characters: False
 ```
 
 ### -Throw
+
 {{Fill Throw Description}}
 
 ```yaml
@@ -708,6 +770,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
