@@ -34,7 +34,6 @@ either inside or outside a Describe block.
 
 ```
 # The script module:
-```
 
 function PublicFunction
 { # Does something
@@ -58,6 +57,7 @@ PrivateFunction | Should -Be \$true
 }
 }
 }
+```
 
 Normally you would not be able to access "PrivateFunction" from
 the PowerShell session, because the module only exported

@@ -32,7 +32,6 @@ executed in a manner that is similar to unit tests.
 
 ```
 # Gherkin Steps need to be placed in a *.Step.ps1 file
-```
 
 # filename: copyfile.Step.ps1
 
@@ -61,12 +60,12 @@ And we have a destination folder
 When we call Copy-Item
 Then we have a new file in the destination
 And the new file is the same as the original file
+````
 
 ### EXAMPLE 2
 
 ```
 # This example shows a complex regex match that can be used for multiple lines in the feature specification
-```
 
 # The named match is mapped to the script parameter
 
@@ -85,6 +84,7 @@ And we have a New-Node function
 And we have a New-Edge function
 And we have a New-Graph function
 And we have a New-Subgraph function
+```
 
 ## PARAMETERS
 
