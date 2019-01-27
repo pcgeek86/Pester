@@ -62,8 +62,6 @@ Then we have a new file in the destination
 And the new file is the same as the original file
 ```
 
-`
-
 ### EXAMPLE 2
 
 ```
