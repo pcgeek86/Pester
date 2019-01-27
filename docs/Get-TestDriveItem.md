@@ -2,7 +2,6 @@
 external help file: Pester-help.xml
 Module Name: Pester
 online version: https://github.com/pester/Pester/wiki/TestDrive
-about_TestDrive
 schema: 2.0.0
 ---
 

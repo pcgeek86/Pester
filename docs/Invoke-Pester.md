@@ -2,9 +2,6 @@
 external help file: Pester-help.xml
 Module Name: Pester
 online version: https://github.com/pester/Pester/wiki/Invoke-Pester
-Describe
-about_Pester
-New-PesterOption
 schema: 2.0.0
 ---
 
