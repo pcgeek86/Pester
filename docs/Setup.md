@@ -1,7 +1,7 @@
 ---
 external help file: Pester-help.xml
 Module Name: Pester
-online version: https://github.com/pester/Pester/wiki/Set%E2%80%90TestInconclusive
+online version:
 schema: 2.0.0
 ---
 

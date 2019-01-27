@@ -2,7 +2,7 @@
 external help file: Pester-help.xml
 https: //github.com/pester/Pester/issues/880
 Module Name: Pester
-online version: https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4
+online version:
 schema: 2.0.0
 ---
 
