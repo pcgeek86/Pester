@@ -14,13 +14,11 @@ Defines a ScriptBlock hook to run before each scenario to set up the test enviro
 ## SYNTAX
 
 ### All (Default)
-
 ```
 BeforeEachScenario [-Script] <ScriptBlock> [<CommonParameters>]
 ```
 
 ### Tags
-
 ```
 BeforeEachScenario [-Tags] <String[]> [-Script] <ScriptBlock> [<CommonParameters>]
 ```
@@ -52,7 +50,7 @@ Optional tags.
 If set, this hook only runs for features with matching tags
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: Tags
 Aliases:
 
@@ -68,7 +66,7 @@ Accept wildcard characters: False
 The ScriptBlock to run for the hook
 
 ```yaml
-Type: System.Management.Automation.ScriptBlock
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -80,9 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

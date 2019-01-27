@@ -14,156 +14,139 @@ Should is a keyword what is used to define an assertion inside It block.
 ## SYNTAX
 
 ### Legacy (Default)
-
 ```
 Should [[-__LegacyArg1] <Object>] [[-__LegacyArg2] <Object>] [[-__LegacyArg3] <Object>] [-ActualValue <Object>]
  [<CommonParameters>]
 ```
 
 ### Be
-
 ```
 Should [-ActualValue <Object>] [-Be] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [<CommonParameters>]
 ```
 
 ### BeExactly
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeExactly]
  [<CommonParameters>]
 ```
 
 ### BeGreaterThan
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeGreaterThan]
  [<CommonParameters>]
 ```
 
 ### BeLessOrEqual
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLessOrEqual]
  [<CommonParameters>]
 ```
 
 ### BeIn
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeIn]
  [<CommonParameters>]
 ```
 
 ### BeLessThan
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLessThan]
  [<CommonParameters>]
 ```
 
 ### BeGreaterOrEqual
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeGreaterOrEqual]
  [<CommonParameters>]
 ```
 
 ### BeLike
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLike]
  [<CommonParameters>]
 ```
 
 ### BeLikeExactly
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-BeLikeExactly]
  [<CommonParameters>]
 ```
 
 ### BeNullOrEmpty
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeNullOrEmpty] [<CommonParameters>]
 ```
 
 ### BeOfType
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeOfType] [-ExpectedType <Object>]
  [<CommonParameters>]
 ```
 
 ### BeTrue
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeTrue] [<CommonParameters>]
 ```
 
 ### BeFalse
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-BeFalse] [<CommonParameters>]
 ```
 
 ### Contain
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-Contain]
  [<CommonParameters>]
 ```
 
 ### Exist
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Exist] [<CommonParameters>]
 ```
 
 ### FileContentMatch
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-FileContentMatch] [-ExpectedContent <Object>]
  [<CommonParameters>]
 ```
 
 ### FileContentMatchExactly
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-ExpectedContent <Object>]
  [-FileContentMatchExactly] [<CommonParameters>]
 ```
 
 ### FileContentMatchMultiline
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-ExpectedContent <Object>]
  [-FileContentMatchMultiline] [<CommonParameters>]
 ```
 
 ### HaveCount
-
 ```
 Should [-ActualValue <Object>] [-Not] [-ExpectedValue <Object>] [-Because <Object>] [-HaveCount]
  [<CommonParameters>]
 ```
 
-### Match
+### HaveParameter
+```
+Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-HaveParameter] [-ParameterName <Object>]
+ [-Type <Object>] [-DefaultValue <Object>] [-Mandatory] [-HasArgumentCompleter] [<CommonParameters>]
+```
 
+### Match
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Match] [-RegularExpression <Object>]
  [<CommonParameters>]
 ```
 
 ### MatchExactly
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-RegularExpression <Object>] [-MatchExactly]
  [<CommonParameters>]
 ```
 
 ### Throw
-
 ```
 Should [-ActualValue <Object>] [-Not] [-Because <Object>] [-Throw] [-ExpectedMessage <Object>]
  [-ErrorId <Object>] [-ExceptionType <Object>] [-PassThru] [<CommonParameters>]
@@ -193,12 +176,11 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -\_\_LegacyArg1
-
+### -__LegacyArg1
 {{Fill __LegacyArg1 Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Legacy
 Aliases:
 
@@ -209,12 +191,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -\_\_LegacyArg2
-
+### -__LegacyArg2
 {{Fill __LegacyArg2 Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Legacy
 Aliases:
 
@@ -225,12 +206,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -\_\_LegacyArg3
-
+### -__LegacyArg3
 {{Fill __LegacyArg3 Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Legacy
 Aliases:
 
@@ -246,7 +226,7 @@ Accept wildcard characters: False
 {{Fill ActualValue Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
@@ -262,7 +242,7 @@ Accept wildcard characters: False
 {{Fill Be Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Be
 Aliases: EQ
 
@@ -278,8 +258,8 @@ Accept wildcard characters: False
 {{Fill Because Description}}
 
 ```yaml
-Type: System.Object
-Parameter Sets: Be, BeExactly, BeGreaterThan, BeLessOrEqual, BeIn, BeLessThan, BeGreaterOrEqual, BeLike, BeLikeExactly, BeNullOrEmpty, BeOfType, BeTrue, BeFalse, Contain, Exist, FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline, HaveCount, Match, MatchExactly, Throw
+Type: Object
+Parameter Sets: Be, BeExactly, BeGreaterThan, BeLessOrEqual, BeIn, BeLessThan, BeGreaterOrEqual, BeLike, BeLikeExactly, BeNullOrEmpty, BeOfType, BeTrue, BeFalse, Contain, Exist, FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline, HaveCount, HaveParameter, Match, MatchExactly, Throw
 Aliases:
 
 Required: False
@@ -294,7 +274,7 @@ Accept wildcard characters: False
 {{Fill BeExactly Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeExactly
 Aliases: CEQ
 
@@ -310,7 +290,7 @@ Accept wildcard characters: False
 {{Fill BeFalse Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeFalse
 Aliases:
 
@@ -326,7 +306,7 @@ Accept wildcard characters: False
 {{Fill BeGreaterOrEqual Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeGreaterOrEqual
 Aliases: GE
 
@@ -342,7 +322,7 @@ Accept wildcard characters: False
 {{Fill BeGreaterThan Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeGreaterThan
 Aliases: GT
 
@@ -358,7 +338,7 @@ Accept wildcard characters: False
 {{Fill BeIn Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeIn
 Aliases:
 
@@ -374,7 +354,7 @@ Accept wildcard characters: False
 {{Fill BeLessOrEqual Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeLessOrEqual
 Aliases: LE
 
@@ -390,7 +370,7 @@ Accept wildcard characters: False
 {{Fill BeLessThan Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeLessThan
 Aliases: LT
 
@@ -406,7 +386,7 @@ Accept wildcard characters: False
 {{Fill BeLike Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeLike
 Aliases:
 
@@ -422,7 +402,7 @@ Accept wildcard characters: False
 {{Fill BeLikeExactly Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeLikeExactly
 Aliases:
 
@@ -438,7 +418,7 @@ Accept wildcard characters: False
 {{Fill BeNullOrEmpty Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeNullOrEmpty
 Aliases:
 
@@ -454,7 +434,7 @@ Accept wildcard characters: False
 {{Fill BeOfType Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeOfType
 Aliases: HaveType
 
@@ -470,7 +450,7 @@ Accept wildcard characters: False
 {{Fill BeTrue Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: BeTrue
 Aliases:
 
@@ -486,11 +466,26 @@ Accept wildcard characters: False
 {{Fill Contain Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Contain
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultValue
+{{Fill DefaultValue Description}}
+
+```yaml
+Type: Object
+Parameter Sets: HaveParameter
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -502,7 +497,7 @@ Accept wildcard characters: False
 {{Fill ErrorId Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Throw
 Aliases:
 
@@ -518,7 +513,7 @@ Accept wildcard characters: False
 {{Fill ExceptionType Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Throw
 Aliases:
 
@@ -534,7 +529,7 @@ Accept wildcard characters: False
 {{Fill Exist Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Exist
 Aliases:
 
@@ -550,7 +545,7 @@ Accept wildcard characters: False
 {{Fill ExpectedContent Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline
 Aliases:
 
@@ -566,7 +561,7 @@ Accept wildcard characters: False
 {{Fill ExpectedMessage Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Throw
 Aliases:
 
@@ -582,7 +577,7 @@ Accept wildcard characters: False
 {{Fill ExpectedType Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: BeOfType
 Aliases:
 
@@ -598,7 +593,7 @@ Accept wildcard characters: False
 {{Fill ExpectedValue Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Be, BeExactly, BeGreaterThan, BeLessOrEqual, BeIn, BeLessThan, BeGreaterOrEqual, BeLike, BeLikeExactly, Contain, HaveCount
 Aliases:
 
@@ -614,7 +609,7 @@ Accept wildcard characters: False
 {{Fill FileContentMatch Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: FileContentMatch
 Aliases:
 
@@ -630,7 +625,7 @@ Accept wildcard characters: False
 {{Fill FileContentMatchExactly Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: FileContentMatchExactly
 Aliases:
 
@@ -646,11 +641,26 @@ Accept wildcard characters: False
 {{Fill FileContentMatchMultiline Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: FileContentMatchMultiline
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HasArgumentCompleter
+{{Fill HasArgumentCompleter Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HaveParameter
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -662,11 +672,41 @@ Accept wildcard characters: False
 {{Fill HaveCount Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: HaveCount
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HaveParameter
+{{Fill HaveParameter Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HaveParameter
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Mandatory
+{{Fill Mandatory Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HaveParameter
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -678,7 +718,7 @@ Accept wildcard characters: False
 {{Fill Match Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Match
 Aliases:
 
@@ -694,7 +734,7 @@ Accept wildcard characters: False
 {{Fill MatchExactly Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: MatchExactly
 Aliases: CMATCH
 
@@ -710,8 +750,23 @@ Accept wildcard characters: False
 {{Fill Not Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Be, BeExactly, BeGreaterThan, BeLessOrEqual, BeIn, BeLessThan, BeGreaterOrEqual, BeLike, BeLikeExactly, BeNullOrEmpty, BeOfType, BeTrue, BeFalse, Contain, Exist, FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline, HaveCount, Match, MatchExactly, Throw
+Type: SwitchParameter
+Parameter Sets: Be, BeExactly, BeGreaterThan, BeLessOrEqual, BeIn, BeLessThan, BeGreaterOrEqual, BeLike, BeLikeExactly, BeNullOrEmpty, BeOfType, BeTrue, BeFalse, Contain, Exist, FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline, HaveCount, HaveParameter, Match, MatchExactly, Throw
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ParameterName
+{{Fill ParameterName Description}}
+
+```yaml
+Type: Object
+Parameter Sets: HaveParameter
 Aliases:
 
 Required: False
@@ -726,7 +781,7 @@ Accept wildcard characters: False
 {{Fill PassThru Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Throw
 Aliases:
 
@@ -742,7 +797,7 @@ Accept wildcard characters: False
 {{Fill RegularExpression Description}}
 
 ```yaml
-Type: System.Object
+Type: Object
 Parameter Sets: Match, MatchExactly
 Aliases:
 
@@ -758,7 +813,7 @@ Accept wildcard characters: False
 {{Fill Throw Description}}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Throw
 Aliases:
 
@@ -769,10 +824,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -Type
+{{Fill Type Description}}
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+```yaml
+Type: Object
+Parameter Sets: HaveParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

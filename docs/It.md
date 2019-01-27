@@ -14,21 +14,18 @@ Validates the results of a test inside of a Describe block.
 ## SYNTAX
 
 ### Normal (Default)
-
 ```
-It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [<CommonParameters>]
+It [-Name] <String> [[-Test] <ScriptBlock>] [-TestCases <IDictionary[]>] [<CommonParameters>]
 ```
 
 ### Pending
-
 ```
-It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Pending] [<CommonParameters>]
+It [-Name] <String> [[-Test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Pending] [<CommonParameters>]
 ```
 
 ### Skip
-
 ```
-It [-name] <String> [[-test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Skip] [<CommonParameters>]
+It [-Name] <String> [[-Test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Skip] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,59 +109,17 @@ Describe "Add-Numbers" {
 
 ## PARAMETERS
 
-### -name
+### -Name
 
 An expressive phrase describing the expected test outcome.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -test
-
-The script block that should throw an exception if the
-expectation of the test is not met.If you are following the
-AAA pattern (Arrange-Act-Assert), this typically holds the
-Assert.
-
-```yaml
-Type: System.Management.Automation.ScriptBlock
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: {}
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TestCases
-
-Optional array of hashtable (or any IDictionary) objects.
-If this parameter is used,
-Pester will call the test script block once for each table in the TestCases array,
-splatting the dictionary to the test script block as input.
-If you want the name of
-the test to appear differently for each test case, you can embed tokens into the Name
-parameter with the syntax 'Adds numbers \<A\> and \<B\>' (assuming you have keys named A and B
-in your TestCases hashtables.)
-
-```yaml
-Type: System.Collections.IDictionary[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -179,7 +134,7 @@ An empty test, that is a
 test that contains nothing except whitespace or comments is marked as Pending by default.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Pending
 Aliases:
 
@@ -199,7 +154,7 @@ Use the Strict parameter
 of Invoke-Pester to force all skipped tests to fail.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Skip
 Aliases: Ignore
 
@@ -210,10 +165,50 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -Test
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+The script block that should throw an exception if the
+expectation of the test is not met.If you are following the
+AAA pattern (Arrange-Act-Assert), this typically holds the
+Assert.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: {}
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TestCases
+
+Optional array of hashtable (or any IDictionary) objects.
+If this parameter is used,
+Pester will call the test script block once for each table in the TestCases array,
+splatting the dictionary to the test script block as input.
+If you want the name of
+the test to appear differently for each test case, you can embed tokens into the Name
+parameter with the syntax 'Adds numbers \<A\> and \<B\>' (assuming you have keys named A and B
+in your TestCases hashtables.)
+
+```yaml
+Type: IDictionary[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

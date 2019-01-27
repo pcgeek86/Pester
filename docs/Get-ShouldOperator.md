@@ -54,6 +54,7 @@ Return help examples for the Be assertion operator.
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: Be, EQ, BeExactly, CEQ, BeGreaterThan, GT, BeLessOrEqual, LE, BeIn, BeLessThan, LT, BeGreaterOrEqual, GE, BeLike, BeLikeExactly, BeNullOrEmpty, BeOfType, HaveType, BeTrue, BeFalse, Contain, Exist, FileContentMatch, FileContentMatchExactly, FileContentMatchMultiline, HaveCount, HaveParameter, Match, MatchExactly, CMATCH, Throw
 
 Required: False
 Position: Named
@@ -63,9 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

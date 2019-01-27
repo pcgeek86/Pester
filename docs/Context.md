@@ -58,18 +58,36 @@ It "..." { ...
 
 ## PARAMETERS
 
+### -Fixture
+
+Script that is executed.
+This may include setup specific to the context
+and one or more It blocks that validate the expected outcomes.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: $(Throw "No test script block is provided. (Have you put the open curly brace on the next line?)")
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 
 The name of the Context.
 This is a phrase describing a set of tests within a describe.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -83,7 +101,7 @@ it is possible to specify a -Tag parameter which will only execute Context block
 containing the same Tag.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Tags
 
@@ -94,28 +112,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Fixture
-
-Script that is executed.
-This may include setup specific to the context
-and one or more It blocks that validate the expected outcomes.
-
-```yaml
-Type: System.Management.Automation.ScriptBlock
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: $(Throw "No test script block is provided. (Have you put the open curly brace on the next line?)")
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

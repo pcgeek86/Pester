@@ -60,7 +60,9 @@ And we have a destination folder
 When we call Copy-Item
 Then we have a new file in the destination
 And the new file is the same as the original file
-````
+```
+
+`
 
 ### EXAMPLE 2
 
@@ -94,7 +96,7 @@ The name of a gherkin step is actually a regular expression, from which capturin
 are cast and passed to the parameters in the ScriptBlock
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -112,7 +114,7 @@ May accept parameters from regular expression
 capturing groups (named or not), or from tables or multiline strings.
 
 ```yaml
-Type: System.Management.Automation.ScriptBlock
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -124,9 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

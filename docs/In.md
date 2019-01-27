@@ -37,12 +37,12 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -path
+### -execute
 
-The path that the execute block will be executed in.
+The script to be executed in the path provided.
 
 ```yaml
-Type: System.Object
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -53,28 +53,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -execute
+### -path
 
-The script to be executed in the path provided.
+The path that the execute block will be executed in.
 
 ```yaml
-Type: System.Management.Automation.ScriptBlock
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
-
-(https://github.com/pester/Pester/wiki/Migrating-from-Pester-3-to-Pester-4)## INPUTS
+## INPUTS
 
 ## OUTPUTS
 

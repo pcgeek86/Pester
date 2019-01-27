@@ -15,14 +15,12 @@ and throws an exception if it has not.
 ## SYNTAX
 
 ### ParameterFilter (Default)
-
 ```
 Assert-MockCalled [-CommandName] <String> [[-Times] <Int32>] [[-ParameterFilter] <ScriptBlock>]
  [[-ModuleName] <String>] [[-Scope] <String>] [-Exactly] [<CommonParameters>]
 ```
 
 ### ExclusiveFilter
-
 ```
 Assert-MockCalled [-CommandName] <String> [[-Times] <Int32>] -ExclusiveFilter <ScriptBlock>
  [[-ModuleName] <String>] [[-Scope] <String>] [-Exactly] [<CommonParameters>]
@@ -153,44 +151,29 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Times
+### -Exactly
 
-The number of times that the mock must be called to avoid an exception
-from throwing.
+If this switch is present, the number specified in Times must match
+exactly the number of times the mock has been called.
+Otherwise it
+must match "at least" the number of times specified.
+If the value
+passed to the Times parameter is zero, the Exactly switch is implied.
 
 ```yaml
-Type: Int32
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
-Default value: 1
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ParameterFilter
-
-An optional filter to qualify wich calls should be counted.
-Only those
-calls to the mock whose parameters cause this filter to return true
-will be counted.
-
-```yaml
-Type: ScriptBlock
-Parameter Sets: ParameterFilter
-Aliases:
-
-Required: False
-Position: 3
-Default value: { $True }
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -230,8 +213,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ParameterFilter
+
+An optional filter to qualify wich calls should be counted.
+Only those
+calls to the mock whose parameters cause this filter to return true
+will be counted.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: ParameterFilter
+Aliases:
+
+Required: False
+Position: 2
+Default value: { $True }
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -254,35 +256,30 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Exactly
+### -Times
 
-If this switch is present, the number specified in Times must match
-exactly the number of times the mock has been called.
-Otherwise it
-must match "at least" the number of times specified.
-If the value
-passed to the Times parameter is zero, the Exactly switch is implied.
+The number of times that the mock must be called to avoid an exception
+from throwing.
 
 ```yaml
-Type: SwitchParameter
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: False
+Position: 1
+Default value: 1
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

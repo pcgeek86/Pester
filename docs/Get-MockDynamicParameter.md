@@ -15,14 +15,12 @@ You do not need to call it directly.
 ## SYNTAX
 
 ### Cmdlet
-
 ```
 Get-MockDynamicParameter -CmdletName <String> [-Parameters <IDictionary>] [-Cmdlet <Object>]
  [<CommonParameters>]
 ```
 
 ### Function
-
 ```
 Get-MockDynamicParameter -FunctionName <String> [-ModuleName <String>] [-Parameters <IDictionary>]
  [-Cmdlet <Object>] [<CommonParameters>]
@@ -125,7 +123,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

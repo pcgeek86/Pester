@@ -14,19 +14,16 @@ Set-ItResult is used inside the It block to explicitly set the test result
 ## SYNTAX
 
 ### Inconclusive
-
 ```
 Set-ItResult [-Inconclusive] [-Because <String>] [<CommonParameters>]
 ```
 
 ### Pending
-
 ```
 Set-ItResult [-Pending] [-Because <String>] [<CommonParameters>]
 ```
 
 ### Skipped
-
 ```
 Set-ItResult [-Skipped] [-Because <String>] [<CommonParameters>]
 ```
@@ -75,6 +72,24 @@ Tests completed in 0ms
 Tests Passed: 0, Failed: 0, Skipped: 0, Pending: 0, Inconclusive 1
 
 ## PARAMETERS
+
+### -Because
+
+Similarily to failing tests, skipped and inconclusive tests should have reason.
+It allows
+to provide information to the user why the test is neither successful nor failed.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Inconclusive
 
@@ -127,26 +142,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Because
-
-Similarily to failing tests, skipped and inconclusive tests should have reason.
-It allows
-to provide information to the user why the test is neither successful nor failed.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -15,7 +15,7 @@ Creates an object that contains advanced options for Invoke-Pester
 
 ```
 New-PesterOption [-IncludeVSCodeMarker] [[-TestSuiteName] <String>] [-Experimental] [-ShowScopeHints]
- [<CommonParameters>]
+ [[-ScriptBlockFilter] <Hashtable[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,8 +105,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -ScriptBlockFilter
+Adds a filter that acts as -TestName but instead of the name uses location of the Fixture scriptblock. It takes an array of hashtables @{ Path = <string>; Line = <int> } . This is for plugins like CodeLens that parse the scriptblock, but cannot filter by name because of variables in the Describe description.
 
+```yaml
+Type: Hashtable[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -14,7 +14,6 @@ Invokes Pester to run all tests defined in .feature files
 ## SYNTAX
 
 ### Default (Default)
-
 ```
 Invoke-Gherkin [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-CodeCoverage <Object[]>] [-Strict] [-OutputFile <String>] [-OutputFormat <String>]
@@ -22,7 +21,6 @@ Invoke-Gherkin [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-
 ```
 
 ### RetestFailed
-
 ```
 Invoke-Gherkin [-FailedLast] [[-Path] <String>] [[-ScenarioName] <String[]>] [-EnableExit] [[-Tag] <String[]>]
  [-ExcludeTag <String[]>] [-CodeCoverage <Object[]>] [-Strict] [-OutputFile <String>] [-OutputFormat <String>]
@@ -371,7 +369,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
