@@ -11,7 +11,7 @@ modules work as designed.
 Pester 4.x supports
 
 - Windows PowerShell 2.0 and greater
-- PowerShell Core 6.0 and grater
+- PowerShell Core 6.0 and greater
 
 # LONG DESCRIPTION
 

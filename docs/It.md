@@ -33,13 +33,10 @@ It [-Name] <String> [[-Test] <ScriptBlock>] [-TestCases <IDictionary[]>] [-Skip]
 The It command is intended to be used inside of a Describe or Context Block.
 If you are familiar with the AAA pattern (Arrange-Act-Assert), the body of
 the It block is the appropriate location for an assert.
-The convention is to
-assert a single expectation for each It block.
-The code inside of the It block
-should throw a terminating error if the expectation of the test is not met and
+The convention is to assert a single expectation for each It block.
+The code inside of the It block should throw a terminating error if the expectation of the test is not met and
 thus cause the test to fail.
-The name of the It block should expressively state
-the expectation of the test.
+The name of the It block should expressively state the expectation of the test.
 
 In addition to using your own logic to test expectations and throw exceptions,
 you may also use Pester's Should command to perform assertions in plain language.
@@ -53,7 +50,6 @@ command as the first tested statement in the It block.
 
 ```
 function Add-Numbers($a, $b) {
-```
 
 return $a + $b
 }
@@ -80,12 +76,12 @@ $sum = Add-Numbers 2 3
     }
 
 }
+```
 
 ### EXAMPLE 2
 
 ```
 function Add-Numbers($a, $b) {
-```
 
 return $a + $b
 }
@@ -106,6 +102,7 @@ Describe "Add-Numbers" {
     }
 
 }
+```
 
 ## PARAMETERS
 
@@ -130,8 +127,7 @@ Accept wildcard characters: False
 Use this parameter to explicitly mark the test as work-in-progress/not implemented/pending when you
 need to distinguish a test that fails because it is not finished yet from a tests
 that fail as a result of changes being made in the code base.
-An empty test, that is a
-test that contains nothing except whitespace or comments is marked as Pending by default.
+An empty test, that is a test that contains nothing except whitespace or comments is marked as Pending by default.
 
 ```yaml
 Type: SwitchParameter
@@ -148,10 +144,8 @@ Accept wildcard characters: False
 ### -Skip
 
 Use this parameter to explicitly mark the test to be skipped.
-This is preferable to temporarily
-commenting out a test, because the test remains listed in the output.
-Use the Strict parameter
-of Invoke-Pester to force all skipped tests to fail.
+This is preferable to temporarily commenting out a test, because the test remains listed in the output.
+Use the Strict parameter of Invoke-Pester to force all skipped tests to fail.
 
 ```yaml
 Type: SwitchParameter

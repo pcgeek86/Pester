@@ -23,9 +23,8 @@ the objects do not evaluate to be comparable.
 SHOULD MEMBERS
 
 GENERAL
-Be
-Compares one object with another for equality and throws if the two
-objects are not the same.
+    Be
+        Compares one object with another for equality and throws if the two objects are not the same.
 
         $actual="Actual value"
         $actual | Should -Be "actual value" # Test will pass
@@ -70,8 +69,8 @@ objects are not the same.
         $actual | Should -BeOfType System.IO.FileInfo        # Test will fail; FileInfo is not a base class of DirectoryInfo
 
 TEXT
-BeLike
-Asserts that the actual value matches a wildcard pattern using PowerShell's -like operator. This comparison is not case-sensitive.
+    BeLike
+        Asserts that the actual value matches a wildcard pattern using PowerShell's -like operator. This comparison is not case-sensitive.
 
         $actual="Actual value"
         $actual | Should -BeLike "actual *" # Test will pass
@@ -103,8 +102,9 @@ Asserts that the actual value matches a wildcard pattern using PowerShell's -lik
         "I am a value" | Should -MatchExactly "I Am" # Test will fail
 
 COMPARISON
-BeGreaterThan
-Asserts that a number (or other comparable value) is greater than an expected value. Uses PowerShell's -gt operator to compare the two values.
+    BeGreaterThan
+    Asserts that a number (or other comparable value) is greater than an expected value. Uses PowerShell's -gt operator
+    to compare the two values.
 
         2 | Should -BeGreaterThan 0
 
@@ -126,8 +126,8 @@ Asserts that a number (or other comparable value) is greater than an expected va
         10 | Should -BeLessOrEqual 10
 
 COLLECTION
-BeIn
-Asserts that a collection of values contain a specific value. Uses PowerShell's -contains operator to confirm.
+    BeIn
+        Asserts that a collection of values contain a specific value. Uses PowerShell's -contains operator to confirm.
 
         1 | Should -BeIn @(1,2,3,'a','b','c')
 
@@ -142,10 +142,10 @@ Asserts that a collection of values contain a specific value. Uses PowerShell's 
         1,2,3 | Should -HaveCount 3
 
 FILE
-Exist
-Does not perform any comparison but checks if the object calling Exist
-is present in a PS Provider. The object must have valid path syntax. It
-essentially must pass a Test-Path call.
+    Exist
+        Does not perform any comparison but checks if the object calling Exist
+        is present in a PS Provider. The object must have valid path syntax. It
+        essentially must pass a Test-Path call.
 
         $actual=(Dir . )[0].FullName
         Remove-Item $actual
@@ -190,8 +190,8 @@ essentially must pass a Test-Path call.
         'TestDrive:\file.txt' | Should -FileContentMatchMultiline '^I am the first line\.$' # Test will fail.
 
 EXCEPTIONS
-Throw
-Checks if an exception was thrown. Enclose input in a script block.
+    Throw
+        Checks if an exception was thrown. Enclose input in a script block.
 
         { foo } | Should -Throw # Test will pass
         { $foo = 1 } | Should -Throw # Test will fail
@@ -203,7 +203,7 @@ Checks if an exception was thrown. Enclose input in a script block.
         Get-Process -Name "process" -ErrorAction Stop | Should -Throw # Should pass, but the exception thrown by Get-Process causes the test to fail.
 
 NEGATIVE ASSERTIONS
-Any of the Should operators described above can be negated by using the word "Not" before the operator. For example:
+    Any of the Should operators described above can be negated by using the word "Not" before the operator. For example:
 
     'one' | Should -Not -Be 'Two'
     { Get-Item $env:SystemRoot } | Should -Not -Throw
@@ -225,7 +225,7 @@ USING SHOULD IN A TEST
     This test will fail since 3 will not be equal to the sum of 2 and 3.
 
 BECAUSE
-Every built in assertion allows you to specify -Because parameter, to give more meaning to your tests.
+    Every built in assertion allows you to specify -Because parameter, to give more meaning to your tests.
 
     function Get-Group { $null }
     $groups = 1..10 | Get-Group -Size 3
@@ -236,11 +236,17 @@ Every built in assertion allows you to specify -Because parameter, to give more 
 # SEE ALSO
 
 - Describe
+
 - Context
+
 - It
+
+- Set-ItResult
 
 # KEYWORDS
 
 - Be
+
 - BeExactly
+
 - BeNullOrEmpty

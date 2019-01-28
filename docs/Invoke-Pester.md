@@ -123,7 +123,6 @@ This command runs only the tests in the Describe block named "Add Numbers".
 
 ```
 $results = Invoke-Pester -Script D:\MyModule -PassThru -Show None
-```
 
 $failed = $results.TestResult | where Result -eq 'Failed'
 
@@ -147,6 +146,7 @@ StackTrace             : at line: 279 in C:\GitHub\PesterTdd\Module.Help.Tests.p
 ErrorRecord : Expected: value to not be empty
 ParameterizedSuiteName :
 Parameters : {}
+```
 
 This examples uses the PassThru parameter to return a custom object with the
 Pester test results.
@@ -247,8 +247,7 @@ If you omit it, Invoke-Pester runs all
 To run tests in other files, such as .ps1 files, enter the path and file name of
 the file.
 (The file name is required.
-Name patterns that end in "_.ps1" run only
-_.Tests.ps1 files.)
+Name patterns that end in "_.ps1" run only _.Tests.ps1 files.)
 
 To run a Pester test with parameter names and/or values, use a hash table as the
 value of the script parameter.
@@ -262,14 +261,12 @@ All hash tables in a Script
 parameter value must have a Path key.
 
 -- Parameters \[hashtable\]: Runs the script with the specified parameters.
-The
-value is a nested hash table with parameter name and value pairs, such as
+The value is a nested hash table with parameter name and value pairs, such as
 @{UserName = 'User01'; Id = '28'}.
 
 -- Arguments \[array\]: An array or comma-separated list of parameter values
 without names, such as 'User01', 28.
-Use this key to pass values to positional
-parameters.
+Use this key to pass values to positional parameters.
 
 ```yaml
 Type: Object[]
@@ -351,16 +348,13 @@ Accept wildcard characters: False
 ### -ExcludeTag
 
 Omits tests in Describe blocks with the specified Tag parameter values.
-Wildcard
-characters are supported.
-Tag values that include spaces or whitespace
-will be split into multiple tags on the whitespace.
+Wildcard characters are supported.
+Tag values that include spaces or whitespace will be split into multiple tags on the whitespace.
 
 When you specify multiple ExcludeTag values, Invoke-Pester omits tests that have
 any of the listed tags (it ORs the tags).
-However, when you specify TestName
-and ExcludeTag values, Invoke-Pester omits only describe blocks that have one
-of the specified TestName values and one of the specified Tag values.
+However, when you specify TestName and ExcludeTag values, Invoke-Pester omits only describe blocks
+that have one of the specified TestName values and one of the specified Tag values.
 
 If you use both Tag and ExcludeTag, ExcludeTag takes precedence
 
@@ -408,8 +402,7 @@ a Pester test.
 This report does not tell whether code was tested; only whether
 the code ran during the test.
 
-By default, the code coverage report is written to the host program
-(like Write-Host).
+By default, the code coverage report is written to the host program (like Write-Host).
 When you use the PassThru parameter, the custom object
 that Invoke-Pester returns has an additional CodeCoverage property that contains
 a custom object with detailed results of the code coverage test, including lines
@@ -422,12 +415,9 @@ Enter the path to the files of code under test (not the test file).
 Wildcard characters are supported.
 If you omit the path, the default is local
 directory, not the directory specified by the Script parameter.
-Pester test files
-are by default excluded from code coverage when a directory is provided.
-When you
-provide a test file directly using string, code coverage will be measured.
-To include
-tests in code coverage of a directory, use the dictionary syntax and provide
+Pester test files are by default excluded from code coverage when a directory is provided.
+When you provide a test file directly using string, code coverage will be measured.
+To include tests in code coverage of a directory, use the dictionary syntax and provide
 IncludeTests = \$true option, as shown below.
 
 To run a code coverage test only on selected classes, functions or lines in a script,

@@ -92,10 +92,10 @@ The command behavior will do nothing since the ScriptBlock is empty.
 
 ```
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp\1) }
-```
 
 Mock Get-ChildItem { return @{FullName = "B_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp\2) }
 Mock Get-ChildItem { return @{FullName = "C_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith($env:temp\3) }
+```
 
 Multiple mocks of the same command may be used.
 The parameter filter determines which is invoked.
@@ -105,11 +105,12 @@ Here, if Get-ChildItem is called on the "2" directory of the temp folder, then B
 
 ```
 Mock Get-ChildItem { return @{FullName="B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
-```
+
 
 Mock Get-ChildItem { return @{FullName="A_File.TXT"} } -ParameterFilter { $Path -and $Path.StartsWith(\$env:temp) }
 
 Get-ChildItem \$env:temp\me
+```
 
 Here, both mocks could apply since both filters will pass.
 A_File.TXT will be returned because it was the most recent Mock created.
@@ -118,11 +119,12 @@ A_File.TXT will be returned because it was the most recent Mock created.
 
 ```
 Mock Get-ChildItem { return @{FullName = "B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
-```
+
 
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} }
 
 Get-ChildItem c:\windows
+```
 
 Here, A_File.TXT will be returned.
 Since no filter was specified, it will apply to any call to Get-ChildItem that does not pass another filter.
@@ -131,11 +133,11 @@ Since no filter was specified, it will apply to any call to Get-ChildItem that d
 
 ```
 Mock Get-ChildItem { return @{FullName = "B_File.TXT"} } -ParameterFilter { $Path -eq "$env:temp\me" }
-```
 
 Mock Get-ChildItem { return @{FullName = "A_File.TXT"} }
 
 Get-ChildItem \$env:temp\me
+```
 
 Here, B_File.TXT will be returned.
 Even though the filterless mock was created more recently.
@@ -154,7 +156,6 @@ will return a hashtable with a FullName property returning "A_File.TXT"
 
 ```
 Get-Module -Name ModuleMockExample | Remove-Module
-```
 
 New-Module -Name ModuleMockExample -ScriptBlock {
 function Hidden { "Internal Module Function" }
@@ -180,6 +181,7 @@ Describe "ModuleMockExample" {
     }
 
 }
+```
 
 This example shows how calls to commands made from inside a module can be
 mocked by using the -ModuleName parameter.

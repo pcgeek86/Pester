@@ -28,8 +28,6 @@ This function allows you to create custom Should assertions.
 
 ```
 function BeAwesome($ActualValue, [switch] $Negate)
-```
-
 {
 
     \[bool\] $succeeded = $ActualValue -eq 'Awesome'
@@ -60,6 +58,10 @@ Add-AssertionOperator -Name BeAwesome \`
 
 PS C:\\\> "bad" | should -BeAwesome
 {bad} is not Awesome
+
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 

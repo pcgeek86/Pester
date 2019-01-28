@@ -33,9 +33,7 @@ block may contain any number of Context and It blocks.
 
 ```
 function Add-Numbers($a, $b) {
-```
-
-return $a + $b
+    return $a + $b
 }
 
 Describe "Add-Numbers" {
@@ -60,6 +58,7 @@ $sum = Add-Numbers 2 3
     }
 
 }
+```
 
 ## PARAMETERS
 

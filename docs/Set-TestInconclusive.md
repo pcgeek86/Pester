@@ -22,17 +22,14 @@ Set-TestInconclusive [[-Message] <String>] [<CommonParameters>]
 
 If an Set-TestInconclusive is used inside It block, the test will always fails
 with an Inconclusive result.
-It's not a passed result, nor a failed result,
-but something in between � Inconclusive.
-It indicates that the results
-of the test could not be verified.
+
+It's not a passed result, nor a failed result, but something in between - Inconclusive.
+It indicates that the results of the test could not be verified.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-```
-Invoke-Pester
 ```
 
 Describe "Example" {
@@ -45,8 +42,12 @@ Describe "Example" {
 
 }
 
+Invoke-Pester
+```
+
 The test result.
 
+```
 Describing Example
 \[?\] Test what is inconclusive 96ms
 I'm inconclusive because I can
@@ -54,6 +55,7 @@ at line: 10 in C:\Users\\\<SOME_FOLDER\>\Example.Tests.ps1
 10: Set-TestInconclusive -Message "I'm inconclusive because I can"
 Tests completed in 408ms
 Tests Passed: 0, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 1
+```
 
 ## PARAMETERS
 
@@ -83,5 +85,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Set-ItResult](Set-ItResult.md)
 
 [https://github.com/pester/Pester/wiki/Set%E2%80%90TestInconclusive](https://github.com/pester/Pester/wiki/Set%E2%80%90TestInconclusive)
