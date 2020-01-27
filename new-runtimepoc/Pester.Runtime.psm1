@@ -1037,9 +1037,20 @@ function Discover-Test {
             Configuration = $state.PluginConfiguration
         } -ThrowOnFailure
 
+        # TODO: shouldn't the next line use += to aggregate all durations to the root?
         $root.DiscoveryDuration = $perContainerDiscoveryDuration.Elapsed
         if ($PesterPreference.Debug.WriteDebugMessages.Value) {
-            Write-PesterDebugMessage -Scope Discovery -LazyMessage { "Found $(@(View-Flat -Block $root).Count) tests" }
+            $elapsed = $perContainerDiscoveryDuration.Elapsed.TotalMilliseconds
+            $count = $(@(View-Flat -Block $root).Count)
+            Write-PesterDebugMessage -Scope Discovery -LazyMessage { "Found $count tests" }
+
+            $usualStartOverhead = 80
+            $perTest = if ($count -ne 0) { ($elapsed - $usualStartOverhead) / $count } else { 0 }
+            Write-Host -ForegroundColor Red "found $count tests in $([int]$perTest) ms per test"
+            # 6 ms should be how fast it is when no code is running, only tested on my computer for now
+            if (7 -lt $perTest) {
+                Write-PesterDebugMessage -Scope DiscoveryHint -Message "Discovery in '$($container.Content) took $([int]$elapsed) ms for $count tests, which is $($perTest) ms per test (not including assumed $usualStartOverhead ms start overhead), which is more than the threshold of 7 ms per test. Discovery should be as quick as possible. Are you putting some of your code outside of Pester controlled blocks?"
+            }
             Write-PesterDebugMessage -Scope DiscoveryCore "Discovery done in this container."
         }
     }
@@ -1088,7 +1099,7 @@ function Discover-Test {
     } -ThrowOnFailure
 
     if ($PesterPreference.Debug.WriteDebugMessages.Value) {
-        Write-PesterDebugMessage -Scope Discovery "Test discovery finished."
+        Write-PesterDebugMessage -Scope Discovery "Test discovery finished in $($totalDiscoveryDuration.Elapsed.TotalMilliseconds) ms."
     }
 }
 

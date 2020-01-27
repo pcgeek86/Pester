@@ -52,6 +52,8 @@
         'ConvertTo-NUnitReport'
         'New-PesterConfiguration'
 
+        'RemoveDummy-AfterGeneratingTests'
+
 
         # Gherkin Support:
         'Invoke-Gherkin'

@@ -1097,6 +1097,34 @@ function Get-LegacyResult {
     $acc
 }
 
+### Hacky patterns that need to be standardized, keep those names non-standard to make Import-Module complains all the time
+function RemoveDummy-AfterGeneratingTests {
+    & (Get-Module Pester) {
+        # grab the block we are in
+        $block = Get-CurrentBlock
+        # remove the test from the list of tests
+        $block.Tests.RemoveAt(0)
+        # remove the test from the order table
+        # that makes sure that blocks and tests execute in the order
+        # they are in the script
+        $block.Order.RemoveAt(0)
+
+        # post process the current block as if we just discovered it
+        # TODO: pass the same filter as we passed to the run so we can filter
+        & (Get-Module Pester.Runtime) {
+            param ($block)
+            PostProcess-DiscoveredBlock -Block $block -BlockContainer $block.BlockContainer -RootBlock $block.Root -Filter (New-FilterObject)
+        } $block
+    }
+
+    # Add this concept to Pester what needs to be done is that the block
+    # I need to make sure that the dummy test is not needed because describe
+    # should be aware that tests will be generated in it
+    # the Generate block should probably run before BeforeAll, to make sure all the
+    # setups and teardowns stil run correctly
+}
+###
+
 Set-SessionStateHint -Hint Pester -SessionState $ExecutionContext.SessionState
 # these functions will be shared with the mock bootstrap function, or used in mocked calls so let's capture them just once instead of everytime we use a mock
 $script:SafeCommands['Get-MockDynamicParameter'] = $ExecutionContext.SessionState.InvokeCommand.GetCommand('Get-MockDynamicParameter', 'function')
@@ -1110,3 +1138,6 @@ $SafeCommands['Set-DynamicParameterVariable'] = $ExecutionContext.SessionState.I
 # & $script:SafeCommands['Export-ModuleMember'] Invoke-Gherkin, Find-GherkinStep, BeforeEachFeature, BeforeEachScenario, AfterEachFeature, AfterEachScenario, GherkinStep -Alias Given, When, Then, And, But
 & $script:SafeCommands['Export-ModuleMember'] New-MockObject, Add-ShouldOperator, Get-ShouldOperator
 & $script:SafeCommands['Export-ModuleMember'] Export-NunitReport, ConvertTo-NUnitReport, New-PesterConfiguration
+
+# TODO: remove these
+& $script:SafeCommands['Export-ModuleMember'] 'RemoveDummy-AfterGeneratingTests'
